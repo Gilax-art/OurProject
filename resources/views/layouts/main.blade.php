@@ -18,7 +18,7 @@
             <div class="header__block">
             <div class="header__body">
                 <div class="header__logo">
-                <a href="#"><img src="{{ asset('assets/img/logo.png')}}" alt="logo" class="logo__link"></a>
+                <a href="/"><img src="{{ asset('assets/img/logo.png')}}" alt="logo" class="logo__link"></a>
                 </div>
                 <div class="header__menu">
                 <div class="menu__block">
@@ -31,8 +31,8 @@
                     </ul>
                     </nav>
                     <div class="menu__social">
-                        <a class="social__link" href="#"><img src="{{ asset('assets/img/vk.svg')}}" alt="vk_icon" ></a>
-                        <a class="social__link" href="#"><img src="{{ asset('assets/img/tg.svg')}}" alt="tg_icon" ></a>
+                        <a class="social__link" href="/"><img src="{{ asset('assets/img/vk.svg')}}" alt="vk_icon" ></a>
+                        <a class="social__link" href="/"><img src="{{ asset('assets/img/tg.svg')}}" alt="tg_icon" ></a>
                     </div>
 
                 </div>
