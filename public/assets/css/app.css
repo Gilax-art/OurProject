@@ -109,3 +109,23 @@ html {
     margin-top: 22px;
   }
 /*header*/
+
+/*footer*/
+.footer__body {
+    display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-bottom: 60px;
+   margin-top: 72px;
+}
+
+.footer__bottom{
+    padding-bottom: 30px;
+}
+.footer__bottom p{
+    line-height: 130%;
+    text-transform: uppercase;
+    color: rgba(188, 187, 189, 0.5);
+
+}
+/*footer*/

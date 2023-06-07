@@ -51,7 +51,22 @@
 
         <footer class="footer">
             <div class="container">
-                i'm footer
+               <div class="footer__block">
+                <div class="footer__body">
+                    <div class="footer__logo">
+                    <a href="/"><img src="{{ asset('assets/img/logo.png')}}" alt="logo" class="logo__link"></a>
+                    </div>
+                    <div class="footer__social">
+                        <div class="menu__social">
+                            <a class="social__link" href="/"><img src="{{ asset('assets/img/vk.svg')}}" alt="vk_icon" ></a>
+                            <a class="social__link" href="/"><img src="{{ asset('assets/img/tg.svg')}}" alt="tg_icon" ></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <p>ВСЕ&nbsp;ПРАВА&nbsp;ЗАЩИЩЕНЫ&nbsp;&copy;&nbsp;2020-2023</p>
+                </div>
+               </div>
             </div>
         </footer>
     </div>
