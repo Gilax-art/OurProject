@@ -13,14 +13,40 @@
 </head>
 <body>
     <div class="wrapper">
-        <header class="header">
-            <div class="container">
-                i'm header
+    <header class="header">
+        <div class="container">
+            <div class="header__block">
+            <div class="header__body">
+                <div class="header__logo">
+                <a href="#"><img src="{{ asset('assets/img/logo.png')}}" alt="logo" class="logo__link"></a>
+                </div>
+                <div class="header__menu">
+                <div class="menu__block">
+                    <nav class="menu__body">
+                    <ul class="menu__list">
+                        <li><a href="#" class="menu__link menu-active">Команда</a></li>
+                        <li><a href="#" class="menu__link">Услуги</a></li>
+                        <li><a href="#" class="menu__link">Проекты</a></li>
+                        <li><a href="#" class="menu__link">Контакты</a></li>
+                    </ul>
+                    </nav>
+                    <div class="menu__social">
+                        <a class="social__link" href="#"><img src="{{ asset('assets/img/vk.svg')}}" alt="vk_icon" ></a>
+                        <a class="social__link" href="#"><img src="{{ asset('assets/img/tg.svg')}}" alt="tg_icon" ></a>
+                    </div>
+
+                </div>
+                </div>
             </div>
-        </header>
+
+            <div class="header__bottom"></div>
+            </div>
+
+        </div>
+    </header>
 
         <main class="main">
-            @yield('content')
+            <!-- @yield('content') -->
         </main>
 
         <footer class="footer">
