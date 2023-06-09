@@ -193,4 +193,207 @@ html {
     top: 0;
     width: 100%;
     height: 100%;
+    z-index: -1;
 }
+
+/*main*/
+.main_head_wrapper{
+    width: 100%;
+    position: relative;
+    padding: 155px 0px;
+    overflow: hidden;
+}
+.main_head{
+    width: 100%;
+    border: 1px solid #383838;
+    border-left: none;
+    border-right: none;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+}
+.main_head_content{
+    width: 100%;
+    padding: 120px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 99px;
+}
+.main_head_content_grid-wrapp{
+    max-width: 541px;
+    width: 100%;
+}
+.main_head_content_info{
+    max-width: 598px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 64px;
+}
+.main_head_content_info--title{
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 115%;
+    color: #FFFFFF;    
+}
+.main_head_content_info--link{
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    color: #161616;   
+    background: #FFFFFF;
+    border-radius: 120px;
+    padding: 20px 47px; 
+    border: 1px solid white;
+}
+.main_head_content_info--link:hover,
+.main_head_content_info--link:focus{
+    background-color: transparent;
+    color: white;
+}
+.main_head_bubles{
+    overflow: hidden;
+}
+.buble{
+    position: absolute;
+    z-index: -1;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 30s;
+}
+.buble-1{
+    top: 22px;
+    left: 195px;
+    animation-name: buble1;
+}
+@keyframes buble1{
+    0%{
+        transform: translate(-0%, 0%) scale(1) rotateZ(0deg);
+    }
+    30%{
+        transform: translate(40%, -20%) scale(1.2) rotateZ(-120deg);
+    }
+    60%{
+        transform: translate(20%, -10%) scale(0.9) rotateZ(-180deg);
+    }
+    100%{
+        transform: translate(10%, -20%) scale(1.3) rotateZ(-60deg);
+    }
+}
+.buble-2{
+    top: 388px;
+    right: -348px;
+    animation-name: buble2;
+}
+@keyframes buble2{
+    0%{
+        transform: translate(0%, 0%) scale(1) rotateZ(0deg);
+    }
+    30%{
+        transform: translate(-10%, 10%) scale(1.1) rotateZ(90deg);
+    }
+    60%{
+        transform: translate(10%, 30%) scale(0.8) rotateZ(-20deg);
+    }
+    100%{
+        transform: translate(-20%, -60%) scale(1.4) rotateZ(30deg);
+    }
+}
+.buble-3{
+    bottom: 162px;
+    left: 362px;
+    animation-name: buble3;
+}
+@keyframes buble3{
+    0%{
+        transform: translate(0%, 0%) scale(1) rotateZ(0deg);
+    }
+    30%{
+        transform: translate(20%, 20%) scale(1.1) rotateZ(90deg);
+    }
+    60%{
+        transform: translate(-20%, -20%) scale(1.2) rotateZ(180deg);
+    }
+    100%{
+        transform: translate(-10%, 10%) scale(0.8) rotateZ(360deg);
+    }
+}
+.buble-4{
+    top: 33px;
+    left: 108px;
+    animation-name: buble4;
+}
+@keyframes buble4{
+    0%{
+        transform: translate(0%, 0%) scale(1) rotateZ(0deg);
+    }
+    30%{
+        transform: translate(20%, 20%) scale(1.1) rotateZ(90deg);
+    }
+    60%{
+        transform: translate(-20%, -20%) scale(1.2) rotateZ(180deg);
+    }
+    100%{
+        transform: translate(-10%, 10%) scale(0.8) rotateZ(360deg);
+    }
+}
+.buble-5{
+    top: 284px;
+    right: 120px;
+    animation-name: buble5;
+}
+@keyframes buble5{
+    0%{
+        transform: translate(0%, 0%) scale(1) rotateZ(0deg);
+    }
+    30%{
+        transform: translate(-40%, 20%) scale(0.6) rotateZ(20deg);
+    }
+    60%{
+        transform: translate(-20%, 10%) scale(0.9) rotateZ(-60deg);
+    }
+    100%{
+        transform: translate(30%, 0%) scale(1.2) rotateZ(-360deg);
+    }
+}
+.buble-6{
+    top: 300px;
+    left: -300px;
+    animation-name: buble6;
+}
+@keyframes buble6{
+    0%{
+        transform: translate(0%, 0%) scale(1) rotateZ(0deg);
+    }
+    30%{
+        transform: translate(-10%, 30%) scale(0.8) rotateZ(60deg);
+    }
+    60%{
+        transform: translate(-10%, 40%) scale(1.2) rotateZ(20deg);
+    }
+    100%{
+        transform: translate(20%, 5%) scale(1.1) rotateZ(-60deg);
+    }
+}
+.buble-7{
+    bottom: 0px;
+    right: 167px;
+    animation-name: buble7;
+}
+@keyframes buble7{
+    0%{
+        transform: translate(0%, 0%) scale(1) rotateZ(0deg);
+    }
+    30%{
+        transform: translate(10%, 12%) scale(1.1) rotateZ(120deg);
+    }
+    60%{
+        transform: translate(-40%, -40%) scale(0.8) rotateZ(-60deg);
+    }
+    100%{
+        transform: translate(0%, -5%) scale(1) rotateZ(80deg);
+    }
+}
+/*main*/
