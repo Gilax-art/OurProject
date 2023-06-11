@@ -26,10 +26,10 @@
                             <div class="menu__block">
                                 <nav class="menu__body">
                                     <ul class="menu__list">
-                                        <li><a href="#" class="menu__link menu-active">Команда</a></li>
-                                        <li><a href="#" class="menu__link">Услуги</a></li>
-                                        <li><a href="#" class="menu__link">Проекты</a></li>
-                                        <li><a href="#" class="menu__link">Контакты</a></li>
+                                        <li><a href="#team" class="menu__link menu-active">Команда</a></li>
+                                        <li><a href="#servises" class="menu__link">Услуги</a></li>
+                                        <li><a href="#cases" class="menu__link">Проекты</a></li>
+                                        <li><a href="#contacts" class="menu__link">Контакты</a></li>
                                     </ul>
                                 </nav>
                                 <div class="menu__social">
@@ -78,10 +78,44 @@
         </footer>
     </div>
 
+    <div class="popup-back"></div>
+    <div class="popup-wrapper">
+        <section class="popup">
+            <button type="button" class="popup--close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L12.25 12.25M22.5 22.5L12.25 12.25M12.25 12.25L22.5 2L2 22.5" stroke="white" stroke-width="3"/></svg></button>
+            <div class="popup-main">
+                <div class="popup-content">
+                    <div class="popup-main_left">
+                        <p class="popup-main_left-title">Вам нужен проект ?</p>
+                        <p class="popup-main_left-text">Оставьте заявку, либо звоните нам  и мы заполним ее максимально быстро и подробно: <a href="tel:+7 888 888 88 88">+7 888 888 88 88</a></p>
+                        <p class="popup-main_left-text-post">Почта для связи:</p>
+                        <a href="mailto:mail@gmail.com" class="popup-main_left-post">mail@web.ru</a>
+                    </div>
+                    <form action="" method="POST" class="popup-main-form">
+                        <div class="popup-main-form_inputs">
+                            <input class="input-text" required minlength="2" type="text" name="name" placeholder="Ваше имя*">
+                            <input class="input-text" required type="tel" name="phone" placeholder="Телефон*">
+                            <input class="input-text" required type="email" name="email" placeholder="e-mail*">
+                            <textarea class="input-text input-textarea" name="description" placeholder="Описание проекта"></textarea>
+                        </div>
+                        <button type="submit" class="popup-main-form-send">Отправить</button>
+                        <p class="popup-main-form-send-desc">Нажимая на кнопку, вы даете согласие на обработку персональных данных м соглашаетесь с <a target="_blank" href="/policy">политикой конфиденциальности</a></p>
+                    </form>
+                </div>
+            </div>
+            <div class="popup-thanks">
+                <div class="popup-thanks-content">
+                    <h3 class="popup-thanks-content-title">Спасибо за заявку!</h3>
+                    <p class="popup-thanks-content-text">Мы скоро свяжемся с вами!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <div id="particles-js"></div>
 
     <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/particles.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.maskedinput.js') }}"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>
     @stack('script')
 </body>
