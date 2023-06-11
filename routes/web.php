@@ -19,5 +19,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
-Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+    Route::redirect('/register', '/admin');
+});

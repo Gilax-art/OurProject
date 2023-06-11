@@ -88,7 +88,7 @@
                         <p class="popup-main_left-title">Вам нужен проект ?</p>
                         <p class="popup-main_left-text">Оставьте заявку, либо звоните нам  и мы заполним ее максимально быстро и подробно: <a href="tel:+7 888 888 88 88">+7 888 888 88 88</a></p>
                         <p class="popup-main_left-text-post">Почта для связи:</p>
-                        <a href="mailto:mail@gmail.com" class="popup-main_left-post">mail@web.ru</a>
+                        <a href="mailto:mail@gmail.com" class="popup-main_left-post">mail@gmail.com</a>
                     </div>
                     <form action="" method="POST" class="popup-main-form">
                         <div class="popup-main-form_inputs">
