@@ -59,11 +59,13 @@
                     <div class="main_body_info_top">
                         <h2 class="main_body_info--title">Разрабатываем сайты, проектируем веб-сервисы, создаем цифровую среду для пользователя.</h2>
                         <ul class="main_body_info_team">
+                            @foreach ($team as $mate)
                             <li class="main_body_info_team--case">
-                                <img class="main_body_info_team--case-image" src="{{ asset('assets/img/luffy.jpg')}}" alt="Luffy">
-                                <p class="main_body_info_team--case-name">Mugivara Luffy</p>
-                                <p class="main_body_info_team--case-status">The King of pirates</p>
+                                <img class="main_body_info_team--case-image" src="{{ asset('storage/' . $mate->img) }}" alt="{{ $mate->title }}">
+                                <p class="main_body_info_team--case-name">{{ $mate->title }}</p>
+                                <p class="main_body_info_team--case-status">{{ $mate->status }}</p>
                             </li>
+                            @endforeach
                         </ul>
                     </div>
 

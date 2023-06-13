@@ -1,5 +1,5 @@
 @extends('layouts.admin')
 
 @section('content')
-<h1>Admin control</h1>
+<h1 class="admin--title">Привет, Admin!</h1>
 @endsection

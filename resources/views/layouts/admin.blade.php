@@ -34,6 +34,11 @@
                     </a>
                 </li>
                 <li>
+                    <a class="menu__link" href="{{ route('team.index') }}">
+                        Команда
+                    </a>
+                </li>
+                <li>
                     <a class="menu__link menu-active" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         {{ __('Выйти') }}
                     </a>

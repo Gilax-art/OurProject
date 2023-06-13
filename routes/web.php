@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\TeamController;
+use App\Models\Team;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,11 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $team = Team::all();
+    return view('index', compact('team'));
 });
 
 Auth::routes();
-Route::middleware('auth')->group(function () {
-    Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::middleware('auth')->prefix('admin')->group(function () {
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
     Route::redirect('/register', '/admin');
+
+    Route::resource('team', TeamController::class);
 });
+

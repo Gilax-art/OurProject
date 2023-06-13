@@ -39,3 +39,8 @@ $('.popup--close, .popup-back').on('click', function(){
     $('.popup-back').fadeOut(300);
     $('.popup-wrapper').removeClass('active');
 });
+
+$('.input-file input[type=file]').on('change', function(){
+	let file = this.files[0];
+	$(this).next().html(file.name);
+});
