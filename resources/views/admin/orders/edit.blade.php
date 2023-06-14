@@ -39,7 +39,7 @@
     
                 <div class="login_card-row">
                     @if(!empty($order->file))
-                        <a style="word-break: break-all;" href="#" download="{{ $order->file }}" class="admin--team-card-link">Текущий ТЗ файл (Скачать)</a>
+                        <a style="word-break: break-all;" href="{{ $order->file }}" download="{{ $order->file }}" class="admin--team-card-link">Текущий ТЗ файл (Скачать)</a>
                     @endif
                 </div>
 

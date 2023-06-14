@@ -48,7 +48,9 @@ $('input[type=file]').on('change', function(){
 $('form').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData();
-    formData.append('file', $('input[type=file]')[0].files[0]);
+    if($('input[type=file]')[0].files.length){
+        formData.append('file', $('input[type=file]')[0].files[0]);
+    }
     $('.input-send').each(function(){
         if($(this) != $('input[type=file]')){
             let name = $(this).attr('name');

@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [Controller::class, 'index'])->name('/');
 Route::get('order', [Controller::class, 'create'])->name('order');
-Route::post('order', [Controller::class, 'store'])->name('order');
+Route::post('order', [Controller::class, 'tstore'])->name('order');
 
 Auth::routes();
 Route::middleware('auth')->prefix('admin')->group(function () {

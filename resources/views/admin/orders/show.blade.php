@@ -15,7 +15,7 @@
         <h2 class="admin--order-group-name">{{ $order->name }}</h2>
         <p class="admin--order-group-phone">{{ $order->phone }}</p>
         @if(!empty($order->file))
-            <a style="word-break: break-all" href="#" download="{{ $order->file }}" class="admin--team-card-link">Скачать ТЗ</a>
+            <a style="word-break: break-all" href="{{ $order->file }}" download="{{ $order->file }}" class="admin--team-card-link">Скачать ТЗ</a>
         @endif
         @if(!empty($order->description))
         <p class="admin--order-group-textlong"><span>Описание</span> {{ $order->description }}</p>

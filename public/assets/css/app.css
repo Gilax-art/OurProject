@@ -785,10 +785,12 @@ html {
     align-items: center;
     transition-duration: 0.3s;
     opacity: 0;
+    pointer-events: none;
 }
 .popup-wrapper.active{
     transform: translate(-50%, 0%);
     opacity: 1;
+    pointer-events: all;
 }
 .popup{
     width: 100%;
