@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Cases extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'id',
+        'title',
+        'description',
+        'link',
+        'img',
+        'created_at',
+    ];
 }

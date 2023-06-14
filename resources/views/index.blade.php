@@ -298,22 +298,12 @@
     <section class="main_cases" id="cases">
         <div class="container">
             <ul class="main_cases_list">
-                <li class="main_cases-item">
-                    <a target="_blank" href="http://localhost/assets/img/luffy.jpg"></a>
-                    <img src="{{ asset('assets/img/luffy.jpg')}}" alt="luffy">
-                </li>
-                <li class="main_cases-item">
-                    <a target="_blank" href="http://localhost/assets/img/luffy.jpg"></a>
-                    <img src="{{ asset('assets/img/luffy.jpg')}}" alt="luffy">
-                </li>
-                <li class="main_cases-item">
-                    <a target="_blank" href="http://localhost/assets/img/luffy.jpg"></a>
-                    <img src="{{ asset('assets/img/luffy.jpg')}}" alt="luffy">
-                </li>
-                <li class="main_cases-item">
-                    <a target="_blank" href="http://localhost/assets/img/luffy.jpg"></a>
-                    <img src="{{ asset('assets/img/luffy.jpg')}}" alt="luffy">
-                </li>
+                @foreach ($cases as $case)
+                    <li class="main_cases-item">
+                        <a target="_blank" href="{{ $case->link }}"></a>
+                        <img src="{{ asset('storage/' . $case->img) }}" alt="{{ $case->title }}">
+                    </li>  
+                @endforeach
             </ul>
         </div>
     </section>

@@ -40,7 +40,38 @@ $('.popup--close, .popup-back').on('click', function(){
     $('.popup-wrapper').removeClass('active');
 });
 
-$('.input-file input[type=file]').on('change', function(){
+$('input[type=file]').on('change', function(){
 	let file = this.files[0];
 	$(this).next().html(file.name);
+});
+
+$('form').on('submit', function(e){
+    e.preventDefault();
+    var formData = new FormData();
+    formData.append('file', $('input[type=file]')[0].files[0]);
+    $('.input-send').each(function(){
+        if($(this) != $('input[type=file]')){
+            let name = $(this).attr('name');
+            let value = $(this).val();
+            formData.append(name, value);
+        }
+    });
+
+    $.ajax({
+        url: "/order",
+        method: 'POST',
+        contentType: false,
+		processData: false,
+        data: formData,
+        dataType : 'json',
+    }).done(function(rsp){
+        if(rsp.status){
+            $('.popup-main').fadeOut(200);
+            setTimeout(function(){
+                $('.popup-thanks').fadeIn(200);
+            },200);
+        }else{
+            console.log('Ошибка');
+        }
+    });
 });

@@ -67,10 +67,13 @@ class TeamController extends Controller
         $data = $request->validate([
             'title' => 'required',
             'status' => 'required',
-            'img' => 'file | required',
         ]);
 
-        $data['img'] = Storage::disk('public')->put('images/team', $data['img']);
+        if(!empty($request['img'])){
+            $team['img'] = Storage::disk('public')->delete('images/team', $team['img']);
+            $data['img'] = $request['img'];
+            $data['img'] = Storage::disk('public')->put('images/team', $data['img']);
+        }
 
         $team->update($data);
 

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 /*------ GLOBAL -------*/
 .container {
     max-width: 1458px;
@@ -773,7 +774,7 @@ html {
 .popup-wrapper{
     position: fixed;
     left: 50%;
-    top: 50%;
+    top: 80px;
     transform: translate(-50%, 100%);
     max-width: 1640px;
     width: 100%;
@@ -786,7 +787,7 @@ html {
     opacity: 0;
 }
 .popup-wrapper.active{
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0%);
     opacity: 1;
 }
 .popup{
@@ -881,6 +882,7 @@ html {
     align-items: start;
 }
 .popup-main-form_inputs{
+    max-width: 680px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -957,6 +959,7 @@ html {
 	display: inline-block;
 }
 .input-file span {
+    word-break: break-all;
     width: 100%;
 	position: relative;
 	display: flex;

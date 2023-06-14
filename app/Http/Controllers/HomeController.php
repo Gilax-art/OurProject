@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cases;
+use App\Models\Orders;
+use App\Models\Reviews;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +27,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin/index');
+        $orders = Orders::where('status','=', 'Новый')->orderby('id', 'desc')->get();
+        $ordersCount = Orders::where('status','=', 'Принят')->count();
+        $teamCount = Team::count();
+        $casesCount = Cases::count();
+        $reviewsCount = Reviews::count();
+        return view('admin/index', compact(['orders', 'ordersCount', 'teamCount', 'casesCount', 'reviewsCount']));
     }
 }

@@ -99,6 +99,102 @@
 .admin_main_container{
     padding: 80px 120px;
 }
+.admin--subtitle{
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 115%;
+    color: #FFFFFF;   
+    margin-bottom: 20px;
+}
+.admin_main-wrapper{
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    align-items: start;
+}
+.admin_main_left{
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.admin_main_left_list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+.admin_main_left_list-item{
+    width: 100%;
+    background-color: white;
+    border: 2px solid #0a58ca;
+    padding: 20px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 12px;
+    border-radius: 18px;
+}
+.admin_main_left_list-item-top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.admin_main_left_list-item-name{
+    color: #161616;
+}
+.admin_main_left_list-item-ttl{
+    color: #161616;
+    font-weight: 600;
+    font-size: 26px;
+}
+.admin_main_left_list-item-link{
+    color: #0a58ca;
+    font-weight: 600;
+    font-size: 18px;
+}
+.admin_main_left_list-item-link:hover{
+    color: #0d6efd;
+}
+.admin_main_right{
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+.admin_main_right{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid #383838;
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 32px;
+    border-radius: 18px;
+}
+.admin_main_right-text{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    color: #FFFFFF;
+}
+.admin_main_right-text span{
+    margin-left: 10px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid #383838;
+    font-size: 24px;
+    font-weight: 600;
+}
 /*main*/
 
 /*team*/
@@ -115,6 +211,12 @@
     flex-direction: column;
     align-items: start;
     gap: 20px;
+    position: relative;
+}
+.admin--message-alert{
+    padding: 12px 20px;
+    border-radius: 20px;
+    background-color: #42c7eb;
 }
 .admin--create--btn{
     font-weight: 600;
@@ -362,4 +464,161 @@ th::-webkit-scrollbar-thumb {
     max-width: 100%;
     width: 100%;
 }
+.admin--team-card-link{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 130%;
+    color: #0d6efd;
+}
+.admin--team-card-link:hover{
+    color: #0a58ca;
+}
+.admin--team-card-textlong{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: #FFFFFF;    
+}
 /*team*/
+
+/*order*/
+.login_card-row-radio{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.input-radio--label{
+    user-select: none;
+    cursor: pointer;
+}
+.input-radio{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+.input-radio--label-content{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.input-radio--label-indicator{
+    max-width: 20px;
+    min-width: 20px;
+    width: 100%;
+    height: 20px;
+    border-radius: 4px;
+    background-color: white;
+    padding: 2px;
+}
+.input-radio--label-indicator-fill{
+    width: 100%;
+    height: 100%;
+    background: #0d6efd;
+    opacity: 0;
+    transition-duration: 0.3s;
+    border-radius: 4px;
+}
+.input-radio--label-text{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: #FFFFFF;    
+    transition-duration: 0.3s;
+}
+.input-radio:checked + .input-radio--label-content .input-radio--label-indicator .input-radio--label-indicator-fill{
+    opacity: 1;
+}
+.input-radio--label:hover .input-radio--label-text{
+    color: #0a58ca;
+}
+.admin--order-group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    border-radius: 12px;
+    background-color: white;
+    padding: 32px;
+    position: relative;
+}
+.admin--order-group-status{
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+    padding: 8px 16px;
+    border-radius: 12px;
+    background-color: #161616;
+}
+.admin--order-group-status.red{
+    background-color: rgb(151, 13, 8);
+}
+.admin--order-group-status.green{
+    background-color: rgb(5 191 101);
+}
+.admin--order-group-num{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: #161616;
+}
+.admin--order-group-num span{
+    font-size: 18px;
+    color: #0a58ca;
+}
+.admin--order-group-name{
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 115%;
+    color: #161616;    
+}
+.admin--order-group-phone{
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 115%;
+    color: #383838;
+}
+.admin--order-group-textlong{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: #161616;  
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.admin--order-group-textlong span{
+    font-size: 20px;
+    color: #161616;  
+}
+form{
+    width: 100%;
+}
+.btn-primary{
+    max-width: 400px;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+.admin--order-btns{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.admin--order-btns form{
+    max-width: fit-content;
+}
+.admin--order-btns .admin--order-group-status{
+    position: static;
+}
+.admin--order-btns .admin--order-group-status:hover{
+    opacity: 0.7;
+}
+/*order*/

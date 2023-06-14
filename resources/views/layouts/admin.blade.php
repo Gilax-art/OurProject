@@ -34,8 +34,23 @@
                     </a>
                 </li>
                 <li>
+                    <a class="menu__link" href="{{ route('orders.index') }}">
+                        Заказы
+                    </a>
+                </li>
+                <li>
                     <a class="menu__link" href="{{ route('team.index') }}">
                         Команда
+                    </a>
+                </li>
+                <li>
+                    <a class="menu__link" href="{{ route('cases.index') }}">
+                        Кейсы
+                    </a>
+                </li>
+                <li>
+                    <a class="menu__link" href="{{ route('reviews.index') }}">
+                        Отзывы
                     </a>
                 </li>
                 <li>

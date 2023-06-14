@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cases;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CasesController extends Controller
 {
@@ -12,7 +13,8 @@ class CasesController extends Controller
      */
     public function index()
     {
-        //
+        $cases = Cases::orderby('id', 'desc')->paginate(5);
+        return view('admin.cases.index', compact('cases'));
     }
 
     /**
@@ -20,7 +22,7 @@ class CasesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.cases.create');
     }
 
     /**
@@ -28,38 +30,70 @@ class CasesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required',
+            'link' => 'required',
+            'img' => 'file | required',
+        ]);
+
+        if(!empty($request['description'])){
+            $data['description'] = $request['description'];
+        }
+
+        $data['img'] = Storage::disk('public')->put('images/cases', $data['img']);
+
+        Cases::create($data);
+
+        return redirect()->route('cases.index')->with('success','Новый кейс добавлен');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Cases $cases)
+    public function show(Cases $case)
     {
-        //
+        return view('admin.cases.show', compact('case'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Cases $cases)
+    public function edit(Cases $case)
     {
-        //
+        return view('admin.cases.edit', compact('case'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cases $cases)
+    public function update(Request $request, Cases $case)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required',
+            'link' => 'required',
+        ]);
+
+        if(!empty($request['description'])){
+            $data['description'] = $request['description'];
+        }
+        if(!empty($request['img'])){
+            $case['img'] = Storage::disk('public')->delete('images/cases', $case['img']);
+            $data['img'] = $request['img'];
+            $data['img'] = Storage::disk('public')->put('images/cases', $data['img']);
+        }
+
+        $case->update($data);
+
+        return redirect()->route('cases.index')->with('success','Кейс обновлён');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cases $cases)
+    public function destroy(Cases $case)
     {
-        //
+        $case->delete();
+        $case['img'] = Storage::disk('public')->delete('images/cases', $case['img']);
+        return redirect()->route('cases.index')->with('success','Кейс удалён');
     }
 }
