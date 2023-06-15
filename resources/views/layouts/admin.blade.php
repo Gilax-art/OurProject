@@ -16,7 +16,7 @@
         <div class="admin_navigation_container">
             <div class="header__logo">
                 <a href="{{ url('/') }}">
-                    <img src="{{ asset('assets/img/logo.png')}}" alt="logo" class="logo__link">
+                    <img src="{{ asset('assets/img/logo.svg')}}" alt="logo" class="logo__link">
                 </a>
             </div>
             

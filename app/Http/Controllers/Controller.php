@@ -40,7 +40,7 @@ class Controller extends BaseController
         }
         Orders::create($data);
 
-        $idChannel = '-1001415530586';
+        $idChannel = '-1001810625813';
         $botToken = '6175287159:AAEJeVPnHUqxEuSxrmVlNP5soaK76xI7nUk';
         $botData = "<b>Поступил новый заказ!</b>"
             ."   \n\nИмя: <b>".$data['name']."</b>"
