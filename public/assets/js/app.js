@@ -10,6 +10,11 @@ $(document).ready(function(){
     });
 });
 
+$('.menu__body').click(function() {
+    $('.menu__list').slideToggle();
+    $(this).toggleClass('open');
+});
+
 $('.main_body_info_sliders-item--btn').on('click', function(){
     if(!$(this).hasClass('active')){
         $(this).addClass('active');

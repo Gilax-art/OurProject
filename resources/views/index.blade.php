@@ -58,7 +58,7 @@
                 <div class="main_body_info main_body_wrapper-item">
                     <div class="main_body_info_top">
                         <h2 class="main_body_info--title">Разрабатываем сайты, проектируем веб-сервисы, создаем цифровую среду для пользователя.</h2>
-                        <ul class="main_body_info_team">
+                        <!-- <ul class="main_body_info_team">
                             @foreach ($team as $mate)
                             <li class="main_body_info_team--case">
                                 <img class="main_body_info_team--case-image" src="{{ asset('storage/' . $mate->img) }}" alt="{{ $mate->title }}">
@@ -66,7 +66,7 @@
                                 <p class="main_body_info_team--case-status">{{ $mate->status }}</p>
                             </li>
                             @endforeach
-                        </ul>
+                        </ul> -->
                     </div>
 
                     <ul class="main_body_info_sliders" id="servises">
@@ -74,7 +74,7 @@
                             <button class="main_body_info_sliders-item--btn">
                                 <p class="main_body_info_sliders-item--btn-text">Сайты</p>
                                 <div class="main_body_info_sliders-item--btn-right">
-                                    <p class="main_body_info_sliders-item--btn-text-hiden"><span>52 дня</span> 725 000 руб.</p>
+                                    <p class="main_body_info_sliders-item--btn-text-hiden"><span>52 дня</span> 725 000 &#8381;</p>
                                     <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.7033 0V18.5M18.7033 37V18.5M18.7033 18.5H37H0" stroke="white" stroke-width="2"/></svg>                                        
                                 </div>
                             </button>
@@ -88,7 +88,7 @@
                                             <button class="main_body_info_sliders-item_list--item--btn">
                                                 <p class="main_body_info_sliders-item_list--item--btn-text">Брифинг</p>
                                                 <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>2 дня</span> 0 руб.</p>
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>2 дня</span> 0 &#8381;</p>
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
                                                 </div>
                                             </button>
@@ -104,7 +104,7 @@
                                             <button class="main_body_info_sliders-item_list--item--btn">
                                                 <p class="main_body_info_sliders-item_list--item--btn-text">UX/Аналитика</p>
                                                 <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>5 дней</span> 110 000 руб.</p>
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>5 дней</span> 110 000 &#8381;</p>
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
                                                 </div>
                                             </button>
@@ -120,7 +120,7 @@
                                             <button class="main_body_info_sliders-item_list--item--btn">
                                                 <p class="main_body_info_sliders-item_list--item--btn-text">Дизайн концепт</p>
                                                 <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>5 дней</span> 110 000 руб.</p>
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>5 дней</span> 110 000 &#8381;</p>
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
                                                 </div>
                                             </button>
@@ -136,7 +136,7 @@
                                             <button class="main_body_info_sliders-item_list--item--btn">
                                                 <p class="main_body_info_sliders-item_list--item--btn-text">Дизайн всех страниц</p>
                                                 <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>5 дней</span> 110 000 руб.</p>
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>5 дней</span> 110 000 &#8381;</p>
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
                                                 </div>
                                             </button>
@@ -152,7 +152,7 @@
                                             <button class="main_body_info_sliders-item_list--item--btn">
                                                 <p class="main_body_info_sliders-item_list--item--btn-text">Адаптивы</p>
                                                 <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>5 дней</span> 110 000 руб.</p>
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>5 дней</span> 110 000 &#8381;</p>
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
                                                 </div>
                                             </button>
@@ -168,7 +168,7 @@
                                             <button class="main_body_info_sliders-item_list--item--btn">
                                                 <p class="main_body_info_sliders-item_list--item--btn-text">Верстка</p>
                                                 <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>5 дней</span> 110 000 руб.</p>
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>5 дней</span> 110 000 &#8381;</p>
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
                                                 </div>
                                             </button>
@@ -181,7 +181,7 @@
                                             </div>
                                         </li>
                                     </ul>
-                                    <p class="main_body_info_sliders-item--btn-text-hiden main_body_info_sliders-item--price-text"><span>52 дня</span> 725 000 руб.</p>
+                                    <p class="main_body_info_sliders-item--btn-text-hiden main_body_info_sliders-item--price-text"><span>52 дня</span> 725 000 &#8381;</p>
                                 </div>
                             </div>
                         </li>
@@ -189,7 +189,7 @@
                             <button class="main_body_info_sliders-item--btn">
                                 <p class="main_body_info_sliders-item--btn-text">Магазины</p>
                                 <div class="main_body_info_sliders-item--btn-right">
-                                    <p class="main_body_info_sliders-item--btn-text-hiden"><span>52 дня</span> 725 000 руб.</p>
+                                    <p class="main_body_info_sliders-item--btn-text-hiden"><span>52 дня</span> 725 000 &#8381;</p>
                                     <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.7033 0V18.5M18.7033 37V18.5M18.7033 18.5H37H0" stroke="white" stroke-width="2"/></svg>                                        
                                 </div>
                             </button>
@@ -203,7 +203,7 @@
                                             <button class="main_body_info_sliders-item_list--item--btn">
                                                 <p class="main_body_info_sliders-item_list--item--btn-text">Брифинг</p>
                                                 <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>2 дня</span> 0 руб.</p>
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>2 дня</span> 0 &#8381;</p>
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
                                                 </div>
                                             </button>
@@ -216,7 +216,7 @@
                                             </div>
                                         </li>
                                     </ul>
-                                    <p class="main_body_info_sliders-item--btn-text-hiden main_body_info_sliders-item--price-text"><span>52 дня</span> 725 000 руб.</p>
+                                    <p class="main_body_info_sliders-item--btn-text-hiden main_body_info_sliders-item--price-text"><span>52 дня</span> 725 000 &#8381;</p>
                                 </div>
                             </div>
                         </li>
@@ -224,7 +224,7 @@
                             <button class="main_body_info_sliders-item--btn">
                                 <p class="main_body_info_sliders-item--btn-text">Разработка</p>
                                 <div class="main_body_info_sliders-item--btn-right">
-                                    <p class="main_body_info_sliders-item--btn-text-hiden"><span>52 дня</span> 725 000 руб.</p>
+                                    <p class="main_body_info_sliders-item--btn-text-hiden"><span>52 дня</span> 725 000 &#8381;</p>
                                     <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.7033 0V18.5M18.7033 37V18.5M18.7033 18.5H37H0" stroke="white" stroke-width="2"/></svg>                                        
                                 </div>
                             </button>
@@ -238,7 +238,7 @@
                                             <button class="main_body_info_sliders-item_list--item--btn">
                                                 <p class="main_body_info_sliders-item_list--item--btn-text">Брифинг</p>
                                                 <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>2 дня</span> 0 руб.</p>
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>2 дня</span> 0 &#8381;</p>
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
                                                 </div>
                                             </button>
@@ -251,7 +251,7 @@
                                             </div>
                                         </li>
                                     </ul>
-                                    <p class="main_body_info_sliders-item--btn-text-hiden main_body_info_sliders-item--price-text"><span>52 дня</span> 725 000 руб.</p>
+                                    <p class="main_body_info_sliders-item--btn-text-hiden main_body_info_sliders-item--price-text"><span>52 дня</span> 725 000 &#8381;</p>
                                 </div>
                             </div>
                         </li>
@@ -259,7 +259,7 @@
                             <button class="main_body_info_sliders-item--btn">
                                 <p class="main_body_info_sliders-item--btn-text">Дизайн</p>
                                 <div class="main_body_info_sliders-item--btn-right">
-                                    <p class="main_body_info_sliders-item--btn-text-hiden"><span>52 дня</span> 725 000 руб.</p>
+                                    <p class="main_body_info_sliders-item--btn-text-hiden"><span>52 дня</span> 725 000 &#8381;</p>
                                     <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.7033 0V18.5M18.7033 37V18.5M18.7033 18.5H37H0" stroke="white" stroke-width="2"/></svg>                                        
                                 </div>
                             </button>
@@ -273,7 +273,7 @@
                                             <button class="main_body_info_sliders-item_list--item--btn">
                                                 <p class="main_body_info_sliders-item_list--item--btn-text">Брифинг</p>
                                                 <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>2 дня</span> 0 руб.</p>
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>2 дня</span> 0 &#8381;</p>
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
                                                 </div>
                                             </button>
@@ -286,7 +286,7 @@
                                             </div>
                                         </li>
                                     </ul>
-                                    <p class="main_body_info_sliders-item--btn-text-hiden main_body_info_sliders-item--price-text"><span>52 дня</span> 725 000 руб.</p>
+                                    <p class="main_body_info_sliders-item--btn-text-hiden main_body_info_sliders-item--price-text"><span>52 дня</span> 725 000 &#8381;</p>
                                 </div>
                             </div>
                         </li>
@@ -295,7 +295,7 @@
             </div>
         </div>
     </section>
-    <section class="main_cases" id="cases">
+    <!-- <section class="main_cases" id="cases">
         <div class="container">
             <ul class="main_cases_list">
                 @foreach ($cases as $case)
@@ -306,7 +306,7 @@
                 @endforeach
             </ul>
         </div>
-    </section>
+    </section> -->
     <div class="main_contacts-wrap">
         <button href="/" class="main_contacts--link"></button>
         <section class="main_contacts" id="contacts">
