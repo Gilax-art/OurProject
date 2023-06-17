@@ -35,5 +35,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::resource('reviews', ReviewsController::class);
     Route::put('orders/{order}/take', [OrdersController::class, 'take'])->name('orders.take');
     Route::put('orders/{order}/decline', [OrdersController::class, 'decline'])->name('orders.decline');
+    Route::put('orders/{order}/start', [OrdersController::class, 'start'])->name('orders.start');
+    Route::put('orders/{order}/finish', [OrdersController::class, 'finish'])->name('orders.finish');
     Route::resource('orders', OrdersController::class);
 });

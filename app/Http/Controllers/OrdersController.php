@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Helpers\Telegram;
 use App\Models\Orders;
+use App\Models\Team;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -34,7 +36,6 @@ class OrdersController extends Controller
         $data = $request->validate([
             'name' => 'required',
             'phone' => 'required',
-            'status' => 'required',
         ]);
 
         if(!empty($request['file'])){
@@ -55,7 +56,32 @@ class OrdersController extends Controller
      */
     public function show(Orders $order)
     {
-        return view('admin.orders.show', compact('order'));
+        $team = Team::all();
+        $user_name = '';
+        $start_user_name = '';
+        $start_date = '';
+        $users = [];
+        $finish_user_name ='';
+        $finish_date ='';
+        if(!empty($order->status_user_id)){
+            $user_name = User::where('id', '=', $order->status_user_id)->value('name');
+        }
+        if(!empty($order->start_data)){
+            $start_data = json_decode($order->start_data);
+            $start_user_name = User::where('id', '=', $start_data->user_id)->value('name');
+            $start_date = $start_data->start_date;
+        }
+        if(!empty($order->users)){
+            foreach(json_decode($order->users) as $user):
+                $users[] = Team::where('id', '=', $user)->value('title');
+            endforeach;
+        }
+        if(!empty($order->finish_data)){
+            $finish_data = json_decode($order->finish_data);
+            $finish_user_name = User::where('id', '=', $finish_data->user_id)->value('name');
+            $finish_date = $finish_data->finish_date;
+        }
+        return view('admin.orders.show', compact(['order', 'team', 'user_name', 'users', 'start_user_name', 'start_date', 'finish_user_name', 'finish_date']));
     }
 
     /**
@@ -63,7 +89,8 @@ class OrdersController extends Controller
      */
     public function edit(Orders $order)
     {
-        return view('admin.orders.edit', compact('order'));
+        $team = Team::all();
+        return view('admin.orders.edit', compact(['order', 'team']));
     }
 
     /**
@@ -87,24 +114,70 @@ class OrdersController extends Controller
         if(!empty($request['description'])){
             $data['description'] = $request['description'];
         }
+        if(!empty($request['deadline'])){
+            $data['deadline'] = $request['deadline'];
+        }
+        if(!empty($request['users'])){
+            foreach($request['users'] as $user):
+                $userArray[] = $user;
+            endforeach;
+            $data['users'] = $userArray;
+        }
 
         $order->update($data);
 
         return redirect()->route('orders.index')->with('success','Заказ обновлён');
     }
     
-    public function take(Request $request, Orders $order)
+    public function take(Orders $order)
     {
-        $data['status'] = 'Принят';
+        $user_id = auth()->id();
+        $data['status'] = 'В обработке';
+        $data['status_user_id'] = $user_id;
         $order->update($data);
-        return view('admin.orders.show', compact('order'));
+        return redirect('admin/orders/'.$order->id);
     }
 
-    public function decline(Request $request, Orders $order)
+    public function start(Request $request, Orders $order)
+    {
+        $data['status'] = 'В работе';
+
+        $user_id = auth()->id();
+        $current_date = date('d-m-Y');
+        $start_data = [
+            'user_id' => $user_id,
+            'start_date' => $current_date,
+        ];
+        $data['start_data'] = json_encode($start_data);
+        $data['deadline'] = $request['deadline'];
+        foreach($request['users'] as $user):
+            $userArray[] = $user;
+        endforeach;
+        $data['users'] = $userArray;
+        $order->update($data);
+        return redirect('admin/orders/'.$order->id);
+    }
+
+    public function finish(Orders $order)
+    {
+        $data['status'] = 'Завершён';
+
+        $user_id = auth()->id();
+        $current_date = date('d-m-Y');
+        $finish_data = [
+            'user_id' => $user_id,
+            'finish_date' => $current_date,
+        ];
+        $data['finish_data'] = json_encode($finish_data);
+        $order->update($data);
+        return redirect('admin/orders/'.$order->id);
+    }
+
+    public function decline(Orders $order)
     {
         $data['status'] = 'Отклонён';
         $order->update($data);
-        return view('admin.orders.show', compact('order'));
+        return redirect('admin/orders/'.$order->id);
     }
 
     /**

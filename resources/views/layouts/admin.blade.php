@@ -74,5 +74,6 @@
     <script src="{{ asset('assets/js/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.maskedinput.js') }}"></script>
     <script src="{{ asset('assets/js/admin/app.js') }}"></script>
+    @stack('scripts')
 </body>
 </html>

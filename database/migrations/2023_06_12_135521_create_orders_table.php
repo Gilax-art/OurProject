@@ -17,7 +17,12 @@ return new class extends Migration
             $table->string('phone');
             $table->text('description')->nullable();
             $table->string('file')->nullable();
-            $table->enum('status', ['Новый', 'Принят', 'Отклонён'])->default('Новый');
+            $table->enum('status', ['Новый', 'Отклонён', 'В обработке', 'В работе', 'Завершён'])->default('Новый');
+            $table->integer('status_user_id')->nullable();
+            $table->string('start_data')->nullable();
+            $table->string('deadline')->nullable();
+            $table->string('users')->nullable();
+            $table->string('finish_data')->nullable();
             $table->timestamps();
         });
     }

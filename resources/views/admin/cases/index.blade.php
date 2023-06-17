@@ -18,8 +18,13 @@
                         <th>ID</th>
                         <th>Заголовок</th>
                         <th>Описание</th>
-                        <th>Ссылка</th>
                         <th>Картинка</th>
+                        <th>Ссылка на сайт</th>
+                        <th>Ссылка на кейс</th>
+                        <th>Сроки выполнения</th>
+                        <th>Технологии</th>
+                        <th>Отзыв</th>
+                        <th>Скриншоты</th>
                         <th>Дата</th>
                         <th></th>
                         <th></th>
@@ -32,8 +37,13 @@
                         <th scope="row">{{ $case->id }}</th>
                         <td>{{ $case->title }}</td>
                         <td>{{ $case->description }}</td>
-                        <td>{{ $case->link }}</td>
                         <td>{{ $case->img }}</td>
+                        <td>{{ $case->link }}</td>
+                        <td>{{ $case->url }}</td>
+                        <td>{{ $case->deadlines }}</td>
+                        <td>{{ $case->technologies }}</td>
+                        <td>{{ $case->review }}</td>
+                        <td>{{ $case->screenshots }}</td>
                         <td>{{ $case->created_at }}</td>
                         <td>
                             <a class="admin_table--btn show" href="{{ route('cases.show',$case->id) }}">

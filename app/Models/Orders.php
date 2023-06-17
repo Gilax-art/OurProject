@@ -16,6 +16,11 @@ class Orders extends Model
         'description',
         'file',
         'status',
+        'status_user_id',
+        'start_data',
+        'deadline',
+        'users',
+        'finish_data',
         'created_at',
     ];
 }

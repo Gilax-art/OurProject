@@ -21,6 +21,11 @@
                         <th>Описание</th>
                         <th>Файл</th>
                         <th>Статус</th>
+                        <th>ID принявшего</th>
+                        <th>Информация о разработке</th>
+                        <th>Дедлайн</th>
+                        <th>ID сотрудников</th>
+                        <th>Информация о завершении</th>
                         <th>Дата</th>
                         <th></th>
                         <th></th>
@@ -36,6 +41,11 @@
                         <td>{{ $order->description }}</td>
                         <td>{{ $order->file }}</td>
                         <td>{{ $order->status }}</td>
+                        <td>{{ $order->status_user_id }}</td>
+                        <td>{{ $order->start_data }}</td>
+                        <td>{{ $order->deadline }}</td>
+                        <td>{{ $order->users }}</td>
+                        <td>{{ $order->finish_data }}</td>
                         <td>{{ $order->created_at }}</td>
                         <td>
                             <a class="admin_table--btn show" href="{{ route('orders.show',$order->id) }}">

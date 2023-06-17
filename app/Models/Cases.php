@@ -13,8 +13,13 @@ class Cases extends Model
         'id',
         'title',
         'description',
-        'link',
         'img',
+        'link',
+        'url',
+        'deadlines',
+        'technologies',
+        'review',
+        'screenshots',
         'created_at',
     ];
 }

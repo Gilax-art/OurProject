@@ -1,5 +1,30 @@
 @extends('layouts.admin')
-
+@push('scripts')    
+<script>
+    let multiselect_block = document.querySelectorAll(".multiselect_block");
+    multiselect_block.forEach(parent => {
+        let label = parent.querySelector(".field_multiselect");
+        let select = parent.querySelector(".field_select");
+        let text = label.innerHTML;
+        select.addEventListener("change", function(element) {
+            let selectedOptions = this.selectedOptions;
+            label.innerHTML = "";
+            for (let option of selectedOptions) {
+                let button = document.createElement("button");
+                button.type = "button";
+                button.className = "btn_multiselect";
+                button.textContent = option.dataset.name;
+                button.onclick = _ => {
+                    option.selected = false;
+                    button.remove();
+                    if (!select.selectedOptions.length) label.innerHTML = text
+                };
+                label.append(button);
+            }
+        })
+    });
+</script>
+@endpush
 @section('content')
 <h1 class="admin--title">Заказы</h1>
 
@@ -64,15 +89,6 @@
                             </div>
                         </label>
                         <label class="input-radio--label">
-                            <input @if($order->status === 'Принят') @checked(true) @endif type="radio" class="input-radio" value="Принят" name="status">
-                            <div class="input-radio--label-content">
-                                <div class="input-radio--label-indicator">
-                                    <div class="input-radio--label-indicator-fill"></div>
-                                </div>
-                                <span class="input-radio--label-text">Принят</span>
-                            </div>
-                        </label>
-                        <label class="input-radio--label">
                             <input @if($order->status === 'Отклонён') @checked(true) @endif type="radio" class="input-radio" value="Отклонён" name="status">
                             <div class="input-radio--label-content">
                                 <div class="input-radio--label-indicator">
@@ -81,9 +97,60 @@
                                 <span class="input-radio--label-text">Отклонён</span>
                             </div>
                         </label>
+                        <label class="input-radio--label">
+                            <input @if($order->status === 'В обработке') @checked(true) @endif type="radio" class="input-radio" value="В обработке" name="status">
+                            <div class="input-radio--label-content">
+                                <div class="input-radio--label-indicator">
+                                    <div class="input-radio--label-indicator-fill"></div>
+                                </div>
+                                <span class="input-radio--label-text">В обработке</span>
+                            </div>
+                        </label>
+                        <label class="input-radio--label">
+                            <input @if($order->status === 'В работе') @checked(true) @endif type="radio" class="input-radio" value="В работе" name="status">
+                            <div class="input-radio--label-content">
+                                <div class="input-radio--label-indicator">
+                                    <div class="input-radio--label-indicator-fill"></div>
+                                </div>
+                                <span class="input-radio--label-text">В работе</span>
+                            </div>
+                        </label>
+                        <label class="input-radio--label">
+                            <input @if($order->status === 'Завершён') @checked(true) @endif type="radio" class="input-radio" value="Завершён" name="status">
+                            <div class="input-radio--label-content">
+                                <div class="input-radio--label-indicator">
+                                    <div class="input-radio--label-indicator-fill"></div>
+                                </div>
+                                <span class="input-radio--label-text">Завершён</span>
+                            </div>
+                        </label>
                     </div>
                 </div>
-
+                @if(!empty($order->deadline))
+                <div class="login_card-row">
+                    <p style="font-size: 18px;" class="col-form-label">Дедлайн</p>
+                    <input class="input-text" type="date" name="deadline" value="{{ $order->deadline }}" class="form-control" placeholder="Дедлайн">
+                </div>
+                <div class="login_card-row login_card-row-multiselect">
+                    <p style="font-size: 18px;" class="col-form-label">Участники</p>
+                        <div class="form_label">
+                        <div class="multiselect_block">
+                          <label for="select-1" class="field_multiselect">Участники</label>
+          
+                          <input id="checkbox-1" class="multiselect_checkbox" type="checkbox">
+                          <label for="checkbox-1" class="multiselect_label"></label>
+          
+                          <select id="select-1" class="field_select" name="users[]" multiple>
+                            @foreach ($team as $mate)
+                                <option value="{{$mate->id}}" data-name="{{$mate->title}}">{{$mate->title}}</option>
+                            @endforeach
+                          </select>
+                          <span class="field_multiselect_help">Чтобы выбрать несколько - зажмите <b>Ctrl + Участник</b></span>
+                        </div>
+                        <span class="error_text"></span>
+                      </div>
+                </div>
+                @endif
                 <button type="submit" class="btn btn-primary main_head_content_info--link">Подтвердить изменения</button>
             </div>
         </form>
