@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CasesUpdateRequest;
 use App\Models\Cases;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -41,7 +42,7 @@ class CasesController extends Controller
             $data['description'] = $request['description'];
         }
         $data['img'] = Storage::disk('public')->put('images/cases', $data['img']);
-        
+
         if(!empty($request['deadlines'])){
             $data['deadlines'] = $request['deadlines'];
         }
@@ -82,30 +83,22 @@ class CasesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cases $case)
+    public function update(CasesUpdateRequest $request, Cases $case)
     {
-        $data = $request->validate([
-            'title' => 'required',
-            'link' => 'required',
-            'url' => 'required',
-        ]);
-        if(!empty($request['description'])){
-            $data['description'] = $request['description'];
+        $data = $request->validated();
+
+        foreach ($request->all(['deadlines', 'technologies', 'review', 'description']) as $key => $value){
+            if(!empty($value)){
+                $data[$key] = $value;
+            }
         }
+
         if(!empty($request['img'])){
             $case['img'] = Storage::disk('public')->delete('images/cases', $case['img']);
             $data['img'] = $request['img'];
             $data['img'] = Storage::disk('public')->put('images/cases', $data['img']);
         }
-        if(!empty($request['deadlines'])){
-            $data['deadlines'] = $request['deadlines'];
-        }
-        if(!empty($request['technologies'])){
-            $data['technologies'] = $request['technologies'];
-        }
-        if(!empty($request['review'])){
-            $data['review'] = $request['review'];
-        }
+
         if(!empty($request['screenshots'])){
             $screenshotsDel = json_decode($case['screenshots']);
             foreach($screenshotsDel as $screenshotDel):

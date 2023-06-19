@@ -19,7 +19,7 @@
                     <img src="{{ asset('assets/img/logo.svg')}}" alt="logo" class="logo__link">
                 </a>
             </div>
-            
+
             <ul class="menu__list">
                 @guest
                 @if (Route::has('login'))

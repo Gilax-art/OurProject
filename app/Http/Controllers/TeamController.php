@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TeamStoreRequest;
+use App\Http\Requests\TeamUpdateRequest;
 use App\Models\Team;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class TeamController extends Controller
@@ -28,13 +29,9 @@ class TeamController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(TeamStoreRequest $request)
     {
-        $data = $request->validate([
-            'title' => 'required',
-            'status' => 'required',
-            'img' => 'file | required',
-        ]);
+        $data = $request->validated();
 
         $data['img'] = Storage::disk('public')->put('images/team', $data['img']);
 
@@ -62,12 +59,9 @@ class TeamController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Team $team)
+    public function update(TeamUpdateRequest $request, Team $team)
     {
-        $data = $request->validate([
-            'title' => 'required',
-            'status' => 'required',
-        ]);
+        $data = $request->validated();
 
         if(!empty($request['img'])){
             $team['img'] = Storage::disk('public')->delete('images/team', $team['img']);
