@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\OrderStatusEnum;
 use App\Helpers\Telegram;
+use App\Http\Requests\OrderStoreRequest;
 use App\Models\Orders;
 use App\Models\Team;
 use App\Models\User;
@@ -31,12 +33,9 @@ class OrdersController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(OrderStoreRequest $request)
     {
-        $data = $request->validate([
-            'name' => 'required',
-            'phone' => 'required',
-        ]);
+        $data = $request->validated();
 
         if(!empty($request['file'])){
             $data['file'] = $request['file'];
@@ -128,24 +127,22 @@ class OrdersController extends Controller
 
         return redirect()->route('orders.index')->with('success','Заказ обновлён');
     }
-    
+
     public function take(Orders $order)
     {
-        $user_id = auth()->id();
-        $data['status'] = 'В обработке';
-        $data['status_user_id'] = $user_id;
+        $data['status'] = OrderStatusEnum::PENDING;
+        $data['status_user_id'] = auth()->id();
         $order->update($data);
         return redirect('admin/orders/'.$order->id);
     }
 
     public function start(Request $request, Orders $order)
     {
-        $data['status'] = 'В работе';
+        $data['status'] = OrderStatusEnum::WORK;
 
-        $user_id = auth()->id();
         $current_date = date('d-m-Y');
         $start_data = [
-            'user_id' => $user_id,
+            'user_id' => auth()->id(),
             'start_date' => $current_date,
         ];
         $data['start_data'] = json_encode($start_data);
@@ -160,7 +157,7 @@ class OrdersController extends Controller
 
     public function finish(Orders $order)
     {
-        $data['status'] = 'Завершён';
+        $data['status'] = OrderStatusEnum::COMPLETED;
 
         $user_id = auth()->id();
         $current_date = date('d-m-Y');
@@ -175,7 +172,7 @@ class OrdersController extends Controller
 
     public function decline(Orders $order)
     {
-        $data['status'] = 'Отклонён';
+        $data['status'] = OrderStatusEnum::REFUNDED;
         $order->update($data);
         return redirect('admin/orders/'.$order->id);
     }

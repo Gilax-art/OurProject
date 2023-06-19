@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CasesController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\TeamController;
@@ -21,9 +22,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [Controller::class, 'index'])->name('/');
-Route::get('order', [Controller::class, 'create'])->name('order');
-Route::post('order', [Controller::class, 'tstore'])->name('order');
+Route::get('/', [IndexController::class, 'index'])->name('/');
+//Route::get('order', [IndexController::class, 'create'])->name('order');
+Route::post('order', [IndexController::class, 'tstore'])->name('order');
 
 Auth::routes();
 Route::middleware('auth')->prefix('admin')->group(function () {

@@ -71,14 +71,18 @@ $('form').on('submit', function(e){
 		processData: false,
         data: formData,
         dataType : 'json',
-    }).done(function(rsp){
-        if(rsp.status){
-            $('.popup-main').fadeOut(200);
-            setTimeout(function(){
-                $('.popup-thanks').fadeIn(200);
-            },200);
-        }else{
-            console.log('Ошибка');
+        success: function(data){
+            if(data.status){
+                $('.popup-main').fadeOut(200);
+                setTimeout(function(){
+                    $('.popup-thanks').fadeIn(200);
+                },200);
+            }else{
+                console.log(data);
+            }
+        },
+        error: function(error){
+            console.log(error);
         }
-    });
+    })
 });

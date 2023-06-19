@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\OrderStatusEnum;
 use App\Models\Cases;
 use App\Models\Orders;
 use App\Models\Reviews;
@@ -27,16 +28,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $orders_new = Orders::where('status','=', 'Новый')->orderby('id', 'desc')->get();
-        $orders_in_processing = Orders::where('status','=', 'В обработке')->orderby('id', 'desc')->get();
-        $orders_current = Orders::where('status','=', 'В работе')->orderby('id', 'desc')->get();
-        $orders_new_count = Orders::where('status','=', 'Новый')->count();
-        $orders_in_processing_count = Orders::where('status','=', 'В обработке')->count();
-        $orders_current_count = Orders::where('status','=', 'В работе')->count();
-        $orders_done_count = Orders::where('status','=', 'Завершён')->count();
+        $orders_new = Orders::where('status','=', OrderStatusEnum::NOW)->orderby('id', 'desc')->get();
+        $orders_in_processing = Orders::where('status','=', OrderStatusEnum::PENDING)->orderby('id', 'desc')->get();
+        $orders_current = Orders::where('status','=', OrderStatusEnum::WORK)->orderby('id', 'desc')->get();
+        $orders_new_count = Orders::where('status','=', OrderStatusEnum::NOW)->count();
+        $orders_in_processing_count = Orders::where('status','=', OrderStatusEnum::PENDING)->count();
+        $orders_current_count = Orders::where('status','=', OrderStatusEnum::WORK)->count();
+        $orders_done_count = Orders::where('status','=', OrderStatusEnum::REFUNDED)->count();
         $teamCount = Team::count();
         $casesCount = Cases::count();
         $reviewsCount = Reviews::count();
         return view('admin/index', compact(['orders_new', 'orders_in_processing', 'orders_current', 'orders_current_count', 'orders_new_count', 'orders_in_processing_count', 'orders_done_count', 'teamCount', 'casesCount', 'reviewsCount']));
     }
+
 }
