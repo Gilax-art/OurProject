@@ -36,7 +36,7 @@
 @section('content')
 <h1 class="admin--title">Заказы</h1>
 <div class="admin--container">
-    <a class="admin--link-back" href="{{ route('orders.index') }}">Назад</a>
+    <a class="admin--link-back" href="{{ url()->previous() }}">Назад</a>
     
     <div class="admin--order-group">
         <p class="admin--order-group-status

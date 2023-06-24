@@ -1,4 +1,4 @@
-particlesJS.load('particles-js', 'assets/js/config.json', function() {});
+particlesJS.load('particles-js', '/assets/js/config.json', function() {});
 
 $(document).ready(function(){
     $.mask.definitions["9"] = false;
@@ -10,8 +10,7 @@ $(document).ready(function(){
     });
 });
 
-$('.menu__body').click(function() {
-    $('.menu__list').slideToggle();
+$('.menu__body-wrapper').click(function() {
     $(this).toggleClass('open');
 });
 
@@ -35,7 +34,7 @@ $('.main_body_info_sliders-item_list--item--btn').on('click', function(){
     }
 });
 
-$('.main_contacts--link, .main_head_content_info--link').on('click', function(){
+$('.main_contacts--link, .order-form-btn').on('click', function(){
     $('.popup-back').fadeIn(300);
     $('.popup-wrapper').addClass('active');
 });

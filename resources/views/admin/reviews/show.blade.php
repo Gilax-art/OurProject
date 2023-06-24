@@ -3,7 +3,7 @@
 @section('content')
 <h1 class="admin--title">Отзывы</h1>
 <div class="admin--container">
-    <a class="admin--link-back" href="{{ route('reviews.index') }}">Назад</a>
+    <a class="admin--link-back" href="{{ url()->previous() }}">Назад</a>
     
     <div class="admin--team-card">
         @if(!empty($review->img))

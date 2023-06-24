@@ -33,7 +33,7 @@
                     </div>
                     <div class="main_head_content_info">
                         <h1 class="main_head_content_info--title">Высокий уровень проектирования с опытом более 8 лет</h1>
-                        <button href="/" class="main_head_content_info--link">Связаться с нами</button>
+                        <button class="main_head_content_info--link order-form-btn">Связаться с нами</button>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                 <div class="main_body_info main_body_wrapper-item">
                     <div class="main_body_info_top">
                         <h2 class="main_body_info--title">Разрабатываем сайты, проектируем веб-сервисы, создаем цифровую среду для пользователя.</h2>
-                        <!-- <ul class="main_body_info_team">
+                        <ul class="main_body_info_team">
                             @foreach ($team as $mate)
                             <li class="main_body_info_team--case">
                                 <img class="main_body_info_team--case-image" src="{{ asset('storage/' . $mate->img) }}" alt="{{ $mate->title }}">
@@ -66,7 +66,7 @@
                                 <p class="main_body_info_team--case-status">{{ $mate->status }}</p>
                             </li>
                             @endforeach
-                        </ul> -->
+                        </ul>
                     </div>
 
                     <ul class="main_body_info_sliders" id="servises">
@@ -295,18 +295,19 @@
             </div>
         </div>
     </section>
-    <!-- <section class="main_cases" id="cases">
+    <section class="main_cases" id="cases">
         <div class="container">
             <ul class="main_cases_list">
                 @foreach ($cases as $case)
                     <li class="main_cases-item">
-                        <a target="_blank" href="{{ $case->link }}"></a>
+                        <a href="{{ route('case',$case->url) }}"></a>
                         <img src="{{ asset('storage/' . $case->img) }}" alt="{{ $case->title }}">
                     </li>  
                 @endforeach
             </ul>
+            <a href="{{ route('cases') }}" class="main_cases_list-after-link">Больше наших проектов <div class="main_contacts-wrapper-arrow"></div></a>
         </div>
-    </section> -->
+    </section>
     <div class="main_contacts-wrap">
         <button href="/" class="main_contacts--link"></button>
         <section class="main_contacts" id="contacts">

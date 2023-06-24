@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1 class="admin--title">Привет, Admin!</h1>
+    <h1 class="admin--title">Привет, {{ Auth::user()->name }}!</h1>
 
     @if (!$orders_new->isEmpty())
         <h2 class="admin--subtitle">Появились новые заказы!</h2>

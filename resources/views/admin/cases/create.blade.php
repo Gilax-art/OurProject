@@ -70,7 +70,7 @@
 <h1 class="admin--title">Кейсы</h1>
 
 <div class="admin--container">
-    <a class="admin--link-back" href="{{ route('cases.index') }}">Назад</a>
+    <a class="admin--link-back" href="{{ url()->previous() }}">Назад</a>
     <h2 style="margin-bottom: 20px;" class="admin--message">Добавить кейс</h2>
     
     @if ($errors->any())

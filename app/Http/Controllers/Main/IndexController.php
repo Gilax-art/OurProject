@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Main;
 
+use App\Http\Controllers\Controller;
 use App\Helpers\OrderStatusEnum;
 use App\Helpers\Telegram;
 use App\Http\Requests\IndexTgStoreRequest;
@@ -23,6 +24,7 @@ class IndexController extends Controller
 //    public function create() {
 //        return view('order');
 //    }
+
 
     public function tstore(IndexTgStoreRequest $request, Telegram $telegram) {
 

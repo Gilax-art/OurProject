@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\CasesController;
+use App\Http\Controllers\Main\CaseController;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\IndexController;
+use App\Http\Controllers\Main\IndexController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ReviewsController;
 use App\Http\Controllers\TeamController;
@@ -26,10 +27,15 @@ Route::get('/', [IndexController::class, 'index'])->name('/');
 //Route::get('order', [IndexController::class, 'create'])->name('order');
 Route::post('order', [IndexController::class, 'tstore'])->name('order');
 
+Route::prefix('cases')->group(function () {
+    Route::get('/', [CaseController::class, 'index'])->name('cases');
+    Route::get('{url}', [CaseController::class, 'case'])->name('case');
+});
+
 Auth::routes();
+Route::redirect('/register', '/admin');
 Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
-    Route::redirect('/register', '/admin');
 
     Route::resource('team', TeamController::class);
     Route::resource('cases', CasesController::class);

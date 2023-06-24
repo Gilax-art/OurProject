@@ -3,7 +3,7 @@
 @section('content')
 <h1 class="admin--title">Кейсы</h1>
 <div class="admin--container">
-    <a class="admin--link-back" href="{{ route('cases.index') }}">Назад</a>
+    <a class="admin--link-back" href="{{ url()->previous() }}">Назад</a>
     
     <div class="admin--team-card-wrapper">
         <div class="admin--case-card">
@@ -14,13 +14,14 @@
                 <div class="admin--case-card-info">
                     <a target="_blank" class="admin--team-card-link" href="{{ $case->link }}">{{ $case->link }}</a>
                     <h2 class="admin--team-card-name">{{ $case->title }}</h2>
-                    @if(!empty($case->description))
-                        <p class="admin--cases-card-p">Описание</p>
-                        <h3 class="admin--team-card-status">{{ $case->description }}</h3>
-                    @endif
+                    
                 </div>
             </div>
             <div class="admin--case-card-bot">
+                @if(!empty($case->description))
+                    <p class="admin--cases-card-p">Описание</p>
+                    <p class="admin--team-card-status">{{ $case->description }}</p>
+                @endif
                 @if(!empty($case->description))
                     <p class="admin--cases-card-p">Сроки</p>
                     <h3 class="admin--team-card-status">{{ $case->deadlines }}</h3>
