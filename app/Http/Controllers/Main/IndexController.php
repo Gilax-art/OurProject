@@ -9,7 +9,6 @@ use App\Http\Requests\IndexTgStoreRequest;
 use App\Models\Cases;
 use App\Models\Orders;
 use App\Models\Team;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class IndexController extends Controller

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReviewsStoreRequest;
+use App\Http\Requests\ReviewsUpdateRequest;
 use App\Models\Reviews;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class ReviewsController extends Controller
@@ -28,12 +29,9 @@ class ReviewsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ReviewsStoreRequest $request)
     {
-        $data = $request->validate([
-            'name' => 'required',
-            'text' => 'required',
-        ]);
+        $data = $request->validated();
 
         if(!empty($request['img'])){
             $data['img'] = $request['img'];
@@ -67,12 +65,9 @@ class ReviewsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Reviews $review)
+    public function update(ReviewsUpdateRequest $request, Reviews $review)
     {
-        $data = $request->validate([
-            'name' => 'required',
-            'text' => 'required',
-        ]);
+        $data = $request->validated();
 
         if(!empty($request['img'])){
             if(!empty($review['img'])){

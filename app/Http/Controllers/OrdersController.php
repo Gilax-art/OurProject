@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\OrderStatusEnum;
-use App\Helpers\Telegram;
 use App\Http\Requests\OrderStoreRequest;
+use App\Http\Requests\OrdersUpdateRequest;
 use App\Models\Orders;
 use App\Models\Team;
 use App\Models\User;
@@ -95,13 +95,9 @@ class OrdersController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Orders $order)
+    public function update(OrdersUpdateRequest $request, Orders $order)
     {
-        $data = $request->validate([
-            'name' => 'required',
-            'phone' => 'required',
-            'status' => 'required',
-        ]);
+        $data = $request->validated();
 
         if(!empty($request['file'])){
             if(!empty($order['file'])){
