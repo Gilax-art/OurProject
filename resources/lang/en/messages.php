@@ -3,16 +3,16 @@
 use Illuminate\Support\Facades\Storage;
 
 $dollar = (float)Storage::disk('public')->get('currency/dollar.txt');
-$price1 = round((25000 / $dollar) + ((25000 / $dollar)/2));
-$price2 = round((20000 / $dollar) + ((20000 / $dollar)/2));
-$price3 = round((45000 / $dollar) + ((45000 / $dollar)/2));
-$price4 = round((100000 / $dollar) + ((100000 / $dollar)/2));
-$price5 = round((5000 / $dollar) + ((5000 / $dollar)/2));
-$price6 = round((3000 / $dollar) + ((3000 / $dollar)/2));
-$price7 = round((40000 / $dollar) + ((40000 / $dollar)/2));
-$price8 = round((50000 / $dollar) + ((50000 / $dollar)/2));
-$price9 = round((10000 / $dollar) + ((10000 / $dollar)/2));
-$price10 = round((15000 / $dollar) + ((15000 / $dollar)/2));
+$price1 = round((25000 / $dollar) * 1.5);
+$price2 = round((20000 / $dollar) * 1.5);
+$price3 = round((45000 / $dollar) * 1.5);
+$price4 = round((100000 / $dollar) * 1.5);
+$price5 = round((5000 / $dollar) * 1.5);
+$price6 = round((3000 / $dollar) * 1.5);
+$price7 = round((40000 / $dollar) * 1.5);
+$price8 = round((50000 / $dollar) * 1.5);
+$price9 = round((10000 / $dollar) * 1.5);
+$price10 = round((15000 / $dollar) * 1.5);
 
 return [
     'title' => 'High level design with over 8 years of experience',
