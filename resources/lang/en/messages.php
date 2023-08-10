@@ -15,13 +15,13 @@ $price9 = round((10000 / $dollar) * 1.5);
 $price10 = round((15000 / $dollar) * 1.5);
 
 return [
-    'title' => 'High level design with over 8 years of experience',
+    'title' => 'High level design with over 8 years experience',
     'contactus' => 'Contact us',
     'team' => 'Team',
     'services' => 'Services',
     'projects' => 'Cases',
     'contacts' => 'Contacts',
-    'about' => 'We develop websites, design web services, and create a digital environment for the user.',
+    'about' => 'We develop websites, design web services, and create a digital environment for user.',
     'sites' => 'Sites',
     'dev' => 'Development',
     'des' => 'Design',
