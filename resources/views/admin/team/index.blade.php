@@ -16,8 +16,10 @@
                 <thead>
                     <tr class="text-nowrap">
                         <th>ID</th>
-                        <th>Имя</th>
-                        <th>Статус</th>
+                        <th>Имя_Рус</th>
+                        <th>Имя_Анг</th>
+                        <th>Статус_Рус</th>
+                        <th>Статус_Анг</th>
                         <th>Аватарка</th>
                         <th>Дата</th>
                         <th></th>
@@ -29,8 +31,10 @@
                     @foreach ($team as $mate)
                     <tr>
                         <th scope="row">{{ $mate->id }}</th>
-                        <td>{{ $mate->title }}</td>
-                        <td>{{ $mate->status }}</td>
+                        <td>{{ $mate->title_ru }}</td>
+                        <td>{{ $mate->title_en }}</td>
+                        <td>{{ $mate->status_ru }}</td>
+                        <td>{{ $mate->status_en }}</td>
                         <td>{{ $mate->img }}</td>
                         <td>{{ $mate->created_at }}</td>
                         <td>

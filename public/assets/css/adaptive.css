@@ -549,6 +549,9 @@
     .case_scrins{
         padding: 20px;
     }
+    .header__left{
+        gap: 12px;
+    }
 }
 @media (max-width: 374px){
     .main_body_navigation--btn{
@@ -571,5 +574,10 @@
     }
     .main_body_info_team--case-image{
         height: 140px;
+    }
+    .header__left{
+        flex-direction: column;
+        align-items: start;
+        gap: 4px;
     }
 }

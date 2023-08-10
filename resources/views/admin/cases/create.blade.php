@@ -21,7 +21,7 @@
         }
         return n_str.join('');
     }
-    $('input[name="title"]').on('input', function () {
+    $('input[name="title_ru"]').on('input', function () {
         var j = createLink($(this).val());
         j = j.replace(/ /g, '-');
         j = j.replace(/,-/g, '-');
@@ -86,8 +86,12 @@
         @csrf
          <div class="login_card-group">
             <div class="login_card-row">
-                <p style="font-size: 18px;" class="col-form-label">Заголовок</p>
-                <input class="input-text" required type="text" name="title" class="form-control" placeholder="Заголовок">
+                <p style="font-size: 18px;" class="col-form-label">Заголовок_Рус</p>
+                <input class="input-text" required type="text" name="title_ru" class="form-control" placeholder="Заголовок">
+            </div>
+            <div class="login_card-row">
+                <p style="font-size: 18px;" class="col-form-label">Заголовок_Анг</p>
+                <input class="input-text" required type="text" name="title_en" class="form-control" placeholder="Заголовок">
             </div>
     
             <div class="login_card-row">
@@ -96,8 +100,12 @@
             </div>
 
             <div class="login_card-row">
-                <p style="font-size: 18px;" class="col-form-label">Описание (Не обязательно)</p>
-                <textarea class="input-text input-textarea" name="description" placeholder="Описание"></textarea>
+                <p style="font-size: 18px;" class="col-form-label">Описание_Рус (Не обязательно)</p>
+                <textarea class="input-text input-textarea" name="description_ru" placeholder="Описание"></textarea>
+            </div>
+            <div class="login_card-row">
+                <p style="font-size: 18px;" class="col-form-label">Описание_Анг (Не обязательно)</p>
+                <textarea class="input-text input-textarea" name="description_en" placeholder="Описание"></textarea>
             </div>
     
             <div class="login_card-row">
@@ -109,8 +117,12 @@
             </div>
 
             <div class="login_card-row">
-                <p style="font-size: 18px;" class="col-form-label">Сроки выполнения (Не обязательно)</p>
-                <input class="input-text" type="text" name="deadlines" class="form-control" placeholder="Сроки выполнения">
+                <p style="font-size: 18px;" class="col-form-label">Сроки выполнения_Рус (Не обязательно)</p>
+                <input class="input-text" type="text" name="deadlines_ru" class="form-control" placeholder="Сроки выполнения">
+            </div>
+            <div class="login_card-row">
+                <p style="font-size: 18px;" class="col-form-label">Сроки выполнения_Анг (Не обязательно)</p>
+                <input class="input-text" type="text" name="deadlines_en" class="form-control" placeholder="Сроки выполнения">
             </div>
     
             <div class="login_card-row">
@@ -119,13 +131,21 @@
             </div>
 
             <div class="login_card-row">
-                <p style="font-size: 18px;" class="col-form-label">Технологии (Не обязательно)</p>
-                <input class="input-text" type="text" name="technologies" class="form-control" placeholder="Технологии">
+                <p style="font-size: 18px;" class="col-form-label">Технологии_Рус (Не обязательно)</p>
+                <input class="input-text" type="text" name="technologies_ru" class="form-control" placeholder="Технологии">
+            </div>
+            <div class="login_card-row">
+                <p style="font-size: 18px;" class="col-form-label">Технологии_Анг (Не обязательно)</p>
+                <input class="input-text" type="text" name="technologies_en" class="form-control" placeholder="Технологии">
             </div>
 
             <div class="login_card-row">
-                <p style="font-size: 18px;" class="col-form-label">Отзыв клиента (Не обязательно)</p>
-                <textarea class="input-text input-textarea" name="review" placeholder="Отзыв клиента"></textarea>
+                <p style="font-size: 18px;" class="col-form-label">Отзыв клиента_Рус (Не обязательно)</p>
+                <textarea class="input-text input-textarea" name="review_ru" placeholder="Отзыв клиента"></textarea>
+            </div>
+            <div class="login_card-row">
+                <p style="font-size: 18px;" class="col-form-label">Отзыв клиента_Анг (Не обязательно)</p>
+                <textarea class="input-text input-textarea" name="review_en" placeholder="Отзыв клиента"></textarea>
             </div>
 
             <div class="login_card-row">

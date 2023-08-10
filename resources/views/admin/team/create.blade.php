@@ -20,13 +20,23 @@
         @csrf
          <div class="login_card-group">
             <div class="login_card-row">
-                <p style="font-size: 18px;" class="col-form-label">Имя</p>
-                <input class="input-text" required type="text" name="title" class="form-control" placeholder="Имя">
+                <p style="font-size: 18px;" class="col-form-label">Имя_Рус</p>
+                <input class="input-text" required type="text" name="title_ru" class="form-control" placeholder="Имя">
+            </div>
+
+            <div class="login_card-row">
+                <p style="font-size: 18px;" class="col-form-label">Имя_Анг</p>
+                <input class="input-text" required type="text" name="title_en" class="form-control" placeholder="Имя">
             </div>
     
             <div class="login_card-row">
-                <p style="font-size: 18px;" class="col-form-label">Статус</p>
-                <input class="input-text" required type="text" name="status" class="form-control" placeholder="Статус">
+                <p style="font-size: 18px;" class="col-form-label">Статус_Рус</p>
+                <input class="input-text" required type="text" name="status_ru" class="form-control" placeholder="Статус">
+            </div>
+
+            <div class="login_card-row">
+                <p style="font-size: 18px;" class="col-form-label">Статус_Анг</p>
+                <input class="input-text" required type="text" name="status_en" class="form-control" placeholder="Статус">
             </div>
     
             <div class="login_card-row">

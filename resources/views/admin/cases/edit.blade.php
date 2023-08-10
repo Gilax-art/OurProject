@@ -20,7 +20,7 @@
         }
         return n_str.join('');
     }
-    $('input[name="title"]').on('input', function () {
+    $('input[name="title_ru"]').on('input', function () {
         var j = createLink($(this).val());
         j = j.replace(/ /g, '-');
         j = j.replace(/,-/g, '-');
@@ -89,8 +89,12 @@
             @method('PUT')
             <div class="login_card-group">
                 <div class="login_card-row">
-                    <p style="font-size: 18px;" class="col-form-label">Заголовок</p>
-                    <input class="input-text" required value="{{ $case->title }}" type="text" name="title" class="form-control" placeholder="Заголовок">
+                    <p style="font-size: 18px;" class="col-form-label">Заголовок_Рус</p>
+                    <input class="input-text" required value="{{ $case->title_ru }}" type="text" name="title_ru" class="form-control" placeholder="Заголовок">
+                </div>
+                <div class="login_card-row">
+                    <p style="font-size: 18px;" class="col-form-label">Заголовок_Анг</p>
+                    <input class="input-text" required value="{{ $case->title_en }}" type="text" name="title_en" class="form-control" placeholder="Заголовок">
                 </div>
 
                 <div class="login_card-row">
@@ -99,8 +103,12 @@
                 </div>
 
                 <div class="login_card-row">
-                    <p style="font-size: 18px;" class="col-form-label">Описание (Не обязательно)</p>
-                    <textarea class="input-text input-textarea" name="description" placeholder="Описание">@if(!empty($case->description)) {{ $case->description }} @endif</textarea>
+                    <p style="font-size: 18px;" class="col-form-label">Описание_Рус (Не обязательно)</p>
+                    <textarea class="input-text input-textarea" name="description_ru" placeholder="Описание">@if(!empty($case->description_ru)) {{ $case->description_ru }} @endif</textarea>
+                </div>
+                <div class="login_card-row">
+                    <p style="font-size: 18px;" class="col-form-label">Описание_Анг (Не обязательно)</p>
+                    <textarea class="input-text input-textarea" name="description_en" placeholder="Описание">@if(!empty($case->description_en)) {{ $case->description_en }} @endif</textarea>
                 </div>
 
                 <div class="login_card-row">
@@ -112,8 +120,12 @@
                 </div>
 
                 <div class="login_card-row">
-                    <p style="font-size: 18px;" class="col-form-label">Сроки выполнения (Не обязательно)</p>
-                    <input class="input-text" type="text" value="@if(!empty($case->deadlines)) {{ $case->deadlines }} @endif" name="deadlines" class="form-control" placeholder="Сроки выполнения">
+                    <p style="font-size: 18px;" class="col-form-label">Сроки выполнения_Рус (Не обязательно)</p>
+                    <input class="input-text" type="text" value="@if(!empty($case->deadlines_ru)) {{ $case->deadlines_ru }} @endif" name="deadlines_ru" class="form-control" placeholder="Сроки выполнения">
+                </div>
+                <div class="login_card-row">
+                    <p style="font-size: 18px;" class="col-form-label">Сроки выполнения_Анг (Не обязательно)</p>
+                    <input class="input-text" type="text" value="@if(!empty($case->deadlines_en)) {{ $case->deadlines_en }} @endif" name="deadlines_en" class="form-control" placeholder="Сроки выполнения">
                 </div>
 
                 <div class="login_card-row">
@@ -122,13 +134,21 @@
                 </div>
 
                 <div class="login_card-row">
-                    <p style="font-size: 18px;" class="col-form-label">Технологии (Не обязательно)</p>
-                    <input class="input-text" type="text" value="@if(!empty($case->technologies)) {{ $case->technologies }} @endif" name="technologies" class="form-control" placeholder="Технологии">
+                    <p style="font-size: 18px;" class="col-form-label">Технологии_Рус (Не обязательно)</p>
+                    <input class="input-text" type="text" value="@if(!empty($case->technologies_ru)) {{ $case->technologies_ru }} @endif" name="technologies_ru" class="form-control" placeholder="Технологии">
+                </div>
+                <div class="login_card-row">
+                    <p style="font-size: 18px;" class="col-form-label">Технологии_Анг (Не обязательно)</p>
+                    <input class="input-text" type="text" value="@if(!empty($case->technologies_en)) {{ $case->technologies_en }} @endif" name="technologies_en" class="form-control" placeholder="Технологии">
                 </div>
 
                 <div class="login_card-row">
-                    <p style="font-size: 18px;" class="col-form-label">Отзыв клиента (Не обязательно)</p>
-                    <textarea class="input-text input-textarea"  name="review" placeholder="Отзыв клиента">@if(!empty($case->review)) {{ $case->review }} @endif</textarea>
+                    <p style="font-size: 18px;" class="col-form-label">Отзыв клиента_Рус (Не обязательно)</p>
+                    <textarea class="input-text input-textarea"  name="review_ru" placeholder="Отзыв клиента">@if(!empty($case->review_ru)) {{ $case->review_ru }} @endif</textarea>
+                </div>
+                <div class="login_card-row">
+                    <p style="font-size: 18px;" class="col-form-label">Отзыв клиента_Анг (Не обязательно)</p>
+                    <textarea class="input-text input-textarea"  name="review_en" placeholder="Отзыв клиента">@if(!empty($case->review_en)) {{ $case->review_en }} @endif</textarea>
                 </div>
 
                 <div class="login_card-row">

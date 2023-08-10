@@ -22,15 +22,19 @@ class ReviewsStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required',
-            'text' => 'required',
+            'name_ru' => 'required',
+            'name_en' => 'required',
+            'text_ru' => 'required',
+            'text_en' => 'required',
         ];
     }
     public function messages(): array
     {
         return [
-            'name.required' => 'A name is required',
-            'text.required' => 'A text is required',
+            'name_ru.required' => 'A name_ru is required',
+            'name_en.required' => 'A name_en is required',
+            'text_ru.required' => 'A text_ru is required',
+            'text_en.required' => 'A text_en is required',
         ];
     }
 }

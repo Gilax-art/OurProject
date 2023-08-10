@@ -9,21 +9,26 @@
     @endif
 
     <a class="admin--create--btn" href="{{ route('cases.create') }}">Добавить</a>
-
+    
     <div class="card">
         <div class="table-responsive text-nowrap">
             <table class="table">
                 <thead>
                     <tr class="text-nowrap">
                         <th>ID</th>
-                        <th>Заголовок</th>
-                        <th>Описание</th>
+                        <th>Заголовок_Рус</th>
+                        <th>Заголовок_Анг</th>
+                        <th>Описание_Рус</th>
+                        <th>Описание_Анг</th>
                         <th>Картинка</th>
                         <th>Ссылка на сайт</th>
                         <th>Ссылка на кейс</th>
-                        <th>Сроки выполнения</th>
-                        <th>Технологии</th>
-                        <th>Отзыв</th>
+                        <th>Сроки выполнения_Рус</th>
+                        <th>Сроки выполнения_Анг</th>
+                        <th>Технологии_Рус</th>
+                        <th>Технологии_Анг</th>
+                        <th>Отзыв_Рус</th>
+                        <th>Отзыв_Анг</th>
                         <th>Скриншоты</th>
                         <th>Дата</th>
                         <th></th>
@@ -35,14 +40,19 @@
                     @foreach ($cases as $case)
                     <tr>
                         <th scope="row">{{ $case->id }}</th>
-                        <td>{{ $case->title }}</td>
-                        <td>{{ $case->description }}</td>
+                        <td>{{ $case->title_ru }}</td>
+                        <td>{{ $case->title_en }}</td>
+                        <td>{{ $case->description_ru }}</td>
+                        <td>{{ $case->description_en }}</td>
                         <td>{{ $case->img }}</td>
                         <td>{{ $case->link }}</td>
                         <td>{{ $case->url }}</td>
-                        <td>{{ $case->deadlines }}</td>
-                        <td>{{ $case->technologies }}</td>
-                        <td>{{ $case->review }}</td>
+                        <td>{{ $case->deadlines_ru }}</td>
+                        <td>{{ $case->deadlines_en }}</td>
+                        <td>{{ $case->technologies_ru }}</td>
+                        <td>{{ $case->technologies_en }}</td>
+                        <td>{{ $case->review_ru }}</td>
+                        <td>{{ $case->review_en }}</td>
                         <td>{{ $case->screenshots }}</td>
                         <td>{{ $case->created_at }}</td>
                         <td>

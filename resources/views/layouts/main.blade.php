@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'LVL UP') }}</title>
+    <title>{{ config('app.name', 'BenyWeb') }}</title>
 
     <link rel="stylesheet" href="{{ asset('assets/css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
@@ -17,10 +17,16 @@
             <div class="container">
                 <div class="header__block">
                     <div class="header__body">
-                        <div class="header__logo">
-                            <a href="/">
-                                <img src="{{ asset('assets/img/logo.svg')}}" alt="logo" class="logo__link">
-                            </a>
+                        <div class="header__left">
+                            <div class="header__logo">
+                                <a href="/">
+                                    <img src="{{ asset('assets/img/logo.svg')}}" alt="logo" class="logo__link">
+                                </a>
+                            </div>
+                            <div class="header_langs">
+                                <a class="lang--btn {{ $locale === 'ru' ? 'active': '' }}" href="{{ route('lang', 'ru') }}">Ru</a>
+                                <a class="lang--btn {{ $locale === 'en' ? 'active': '' }}" href="{{ route('lang', 'en') }}">En</a>
+                            </div>
                         </div>
                         <div class="header__menu">
                             <div class="menu__block">
@@ -29,10 +35,10 @@
                                         <div class="hamburger-wrapper"><div class="hamburger"><span></span><span></span><span></span></div></div>
                                         <div class="menu_list-wrapper">
                                             <ul class="menu__list">
-                                                <li><a href="/#team" class="menu__link menu-active">Команда</a></li>
-                                                <li><a href="/#servises" class="menu__link">Услуги</a></li>
-                                                <li><a href="{{ route('cases') }}" class="menu__link">Проекты</a></li>
-                                                <li><a href="/#contacts" class="menu__link">Контакты</a></li>
+                                                <li><a href="/#team" class="menu__link menu-active">{{ __('messages.team') }}</a></li>
+                                                <li><a href="/#servises" class="menu__link">{{ __('messages.services') }}</a></li>
+                                                <li><a href="{{ route('cases') }}" class="menu__link">{{ __('messages.projects') }}</a></li>
+                                                <li><a href="/#contacts" class="menu__link">{{ __('messages.contacts') }}</a></li>
                                             </ul>
                                         </div>
                                     </nav>
@@ -76,7 +82,7 @@
                     </div>
                 </div>
                 <div class="footer__bottom">
-                    <p>ВСЕ&nbsp;ПРАВА&nbsp;ЗАЩИЩЕНЫ&nbsp;&copy;&nbsp;2020-2023</p>
+                    <p>{{ __('messages.rights') }}</p>
                 </div>
                </div>
             </div>
@@ -90,31 +96,31 @@
             <div class="popup-main">
                 <div class="popup-content">
                     <div class="popup-main_left">
-                        <p class="popup-main_left-title">Вам нужен проект ?</p>
-                        <p class="popup-main_left-text">Оставьте заявку, либо звоните нам  и мы заполним ее максимально быстро и подробно: <a href="tel:+7 888 888 88 88">+7 888 888 88 88</a></p>
-                        <p class="popup-main_left-text-post">Почта для связи:</p>
-                        <a href="mailto:mail@gmail.com" class="popup-main_left-post">mail@gmail.com</a>
+                        <p class="popup-main_left-title">{{ __('messages.need') }}</p>
+                        <p class="popup-main_left-text">{{ __('messages.call') }} <br> <br> <a href="tel:+7 949 451 84 07">+7 949 451 84 07</a> <br> <a href="tel:+7 978 594 11 40">+7 978 594 11 40</a></p>
+                        <p class="popup-main_left-text-post">{{ __('messages.post') }}</p>
+                        <a href="mailto:benyweb.info@gmail.com" class="popup-main_left-post">benyweb.info@gmail.com</a>
                     </div>
                     <form enctype="multipart/form-data" class="popup-main-form">
                         <div class="popup-main-form_inputs">
                             <input class="input-send" type="hidden" name="_token" value="{{ csrf_token() }}" />
-                            <input class="input-text input-send" required minlength="2" type="text" name="name" placeholder="Ваше имя*">
-                            <input class="input-text input-send" required type="tel" name="phone" placeholder="Телефон*">
-                            <textarea class="input-send input-text input-textarea" name="description" placeholder="Напишите описание проекта или прикрепите ваше ТЗ ниже"></textarea>
+                            <input class="input-text input-send" required minlength="2" type="text" name="name" placeholder="{{ __('messages.name') }}">
+                            <input class="input-text input-send" required type="tel" name="phone" placeholder="{{ __('messages.phone') }}">
+                            <textarea class="input-send input-text input-textarea" name="description" placeholder="{{ __('messages.tipedes') }}"></textarea>
                             <label class="input-file">
                                 <input accept=".txt, .png, .docx, .jpg, .pdf, .doc, .jpeg" type="file" name="file" class="form-control sendfile">		
-                                <span>Выберите файл <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.2202 7.91548L8.78043 14.2674C8.63984 14.406 8.40516 14.3962 8.25612 14.2451C8.10705 14.094 8.10031 13.859 8.24091 13.7204L14.6806 7.3685C16.0415 6.02621 15.9761 3.74594 14.5351 2.28502C13.094 0.824018 10.8147 0.727472 9.45402 2.06957L9.03334 2.48452L6.82679 4.66095L1.64758 9.76951C0.570953 10.8314 0.622426 12.6361 1.76256 13.792C2.90303 14.9483 4.70644 15.0248 5.78338 13.9625L10.0782 9.7263L12.3715 7.46427C13.0738 6.77161 13.04 5.59483 12.2964 4.84093C11.5524 4.08669 10.3764 4.03701 9.67421 4.72965L3.95238 10.3734C3.81181 10.5121 3.57711 10.5023 3.42798 10.3511C3.27891 10.2 3.27237 9.96516 3.41294 9.82651L9.13475 4.18277C10.1177 3.21328 11.7646 3.28305 12.8057 4.33853C13.8468 5.39401 13.8939 7.04178 12.911 8.01128L10.6177 10.2733L6.32288 14.5095L6.11924 14.7104C6.08321 14.7459 6.04145 14.7713 5.99631 14.7874C4.6226 15.823 2.58162 15.6408 1.25328 14.2941C-0.184408 12.8365 -0.249559 10.5614 1.10794 9.22246L6.28735 4.11373L8.49389 1.93729L8.91457 1.52235C10.5561 -0.096476 13.306 0.0199278 15.0446 1.78251C16.783 3.54496 16.8617 6.29636 15.2202 7.91548Z" fill="white"/></svg></span>
+                                <span>{{ __('messages.choose') }} <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.2202 7.91548L8.78043 14.2674C8.63984 14.406 8.40516 14.3962 8.25612 14.2451C8.10705 14.094 8.10031 13.859 8.24091 13.7204L14.6806 7.3685C16.0415 6.02621 15.9761 3.74594 14.5351 2.28502C13.094 0.824018 10.8147 0.727472 9.45402 2.06957L9.03334 2.48452L6.82679 4.66095L1.64758 9.76951C0.570953 10.8314 0.622426 12.6361 1.76256 13.792C2.90303 14.9483 4.70644 15.0248 5.78338 13.9625L10.0782 9.7263L12.3715 7.46427C13.0738 6.77161 13.04 5.59483 12.2964 4.84093C11.5524 4.08669 10.3764 4.03701 9.67421 4.72965L3.95238 10.3734C3.81181 10.5121 3.57711 10.5023 3.42798 10.3511C3.27891 10.2 3.27237 9.96516 3.41294 9.82651L9.13475 4.18277C10.1177 3.21328 11.7646 3.28305 12.8057 4.33853C13.8468 5.39401 13.8939 7.04178 12.911 8.01128L10.6177 10.2733L6.32288 14.5095L6.11924 14.7104C6.08321 14.7459 6.04145 14.7713 5.99631 14.7874C4.6226 15.823 2.58162 15.6408 1.25328 14.2941C-0.184408 12.8365 -0.249559 10.5614 1.10794 9.22246L6.28735 4.11373L8.49389 1.93729L8.91457 1.52235C10.5561 -0.096476 13.306 0.0199278 15.0446 1.78251C16.783 3.54496 16.8617 6.29636 15.2202 7.91548Z" fill="white"/></svg></span>
                             </label>
                         </div>
-                        <button type="submit" class="popup-main-form-send">Отправить</button>
-                        <p class="popup-main-form-send-desc">Нажимая на кнопку, вы даете согласие на обработку персональных данных м соглашаетесь с <a target="_blank" href="/policy">политикой конфиденциальности</a></p>
+                        <button type="submit" class="popup-main-form-send">{{ __('messages.send') }}</button>
+                        {{-- <p class="popup-main-form-send-desc">Нажимая на кнопку, вы даете согласие на обработку персональных данных м соглашаетесь с <a target="_blank" href="/policy">политикой конфиденциальности</a></p> --}}
                     </form>
                 </div>
             </div>
             <div class="popup-thanks">
                 <div class="popup-thanks-content">
-                    <h3 class="popup-thanks-content-title">Спасибо за заявку!</h3>
-                    <p class="popup-thanks-content-text">Мы скоро свяжемся с вами!</p>
+                    <h3 class="popup-thanks-content-title">{{ __('messages.thanks') }}</h3>
+                    <p class="popup-thanks-content-text">{{ __('messages.wait') }}</p>
                 </div>
             </div>
         </section>

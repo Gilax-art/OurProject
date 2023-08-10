@@ -90,6 +90,25 @@ html {
 .header__logo:focus{
     opacity: 0.8;
 }
+.header__left{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.header_langs{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.lang--btn{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    opacity: 0.6;
+}
+.lang--btn.active{
+    opacity: 1;
+}
 .menu__list{
     display: flex;
     align-items: center;
@@ -648,7 +667,7 @@ html {
     font-size: 16px;
     line-height: 130%;
     color: #FFFFFF;
-    max-width: 293px;
+    max-width: 420px;
 }
 .main_body_info_sliders-item_list{
     width: 100%;
@@ -725,10 +744,10 @@ html {
 .main_body_info_sliders-item_list--item-content-text{
     text-align: left;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 130%;
     color: rgba(188, 187, 189, 0.5);
-    max-width: 295px;
+    max-width: 420px;
     width: 100%;
 }
 .main_body_info_sliders-item--price-text{
@@ -947,9 +966,10 @@ html {
 }
 .popup-main_left-post{
     font-weight: 400;
-    font-size: 56px;
+    font-size: 45px;
     line-height: 125%;
     color: #FFFFFF;
+    word-break: break-all;
 }
 .popup-main_left-post:hover{
     opacity: 0.6;

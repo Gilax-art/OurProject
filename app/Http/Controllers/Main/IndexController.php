@@ -10,20 +10,18 @@ use App\Models\Cases;
 use App\Models\Orders;
 use App\Models\Team;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\App;
 
 class IndexController extends Controller
 {
     public function index()
     {
+        $locale = App::currentLocale();
         $team = Team::all();
         $cases = Cases::orderby('id', 'desc')->take(4)->get();
-        return view('index', compact(['team', 'cases']));
+
+        return view('index', compact(['team', 'cases', 'locale']));
     }
-
-//    public function create() {
-//        return view('order');
-//    }
-
 
     public function tstore(IndexTgStoreRequest $request, Telegram $telegram) {
 

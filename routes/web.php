@@ -3,6 +3,7 @@
 use App\Http\Controllers\CasesController;
 use App\Http\Controllers\Main\CaseController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\Main\IndexController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ReviewsController;
@@ -24,6 +25,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IndexController::class, 'index'])->name('/');
+
+Route::get('lang/{locale}', [LanguageController::class, 'setlanguage'])->name('lang');
+
 //Route::get('order', [IndexController::class, 'create'])->name('order');
 Route::post('order', [IndexController::class, 'tstore'])->name('order');
 

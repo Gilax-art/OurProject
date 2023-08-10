@@ -22,16 +22,20 @@ class TeamUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required',
-            'status' => 'required',
+            'title_ru' => 'required',
+            'title_en' => 'required',
+            'status_ru' => 'required',
+            'status_en' => 'required',
         ];
     }
 
     public function messages(): array
     {
         return [
-            'title.required' => 'A team title is required',
-            'status.required' => 'A status is required',
+            'title_ru.required' => 'A team title_ru is required',
+            'title_en.required' => 'A team title_en is required',
+            'status_ru.required' => 'A status_ru is required',
+            'status_en.required' => 'A status_en is required',
         ];
     }
 }

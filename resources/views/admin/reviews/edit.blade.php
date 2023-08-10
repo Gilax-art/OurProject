@@ -23,13 +23,21 @@
             @method('PUT')
             <div class="login_card-group">
                 <div class="login_card-row">
-                    <p style="font-size: 18px;" class="col-form-label">Имя</p>
-                    <input class="input-text" required type="text" name="name" value="{{ $review->name }}" class="form-control" placeholder="Имя">
+                    <p style="font-size: 18px;" class="col-form-label">Имя_Рус</p>
+                    <input class="input-text" required type="text" name="name_ru" value="{{ $review->name_ru }}" class="form-control" placeholder="Имя">
+                </div>
+                <div class="login_card-row">
+                    <p style="font-size: 18px;" class="col-form-label">Имя_Анг</p>
+                    <input class="input-text" required type="text" name="name_en" value="{{ $review->name_en }}" class="form-control" placeholder="Имя">
                 </div>
         
                 <div class="login_card-row">
-                    <p style="font-size: 18px;" class="col-form-label">Текст отзыва</p>
-                    <textarea class="input-text input-textarea" required name="text" placeholder="Текст отзыва">{{ $review->text }}</textarea>
+                    <p style="font-size: 18px;" class="col-form-label">Текст отзыва_Рус</p>
+                    <textarea class="input-text input-textarea" required name="text_ru" placeholder="Текст отзыва">{{ $review->text_ru }}</textarea>
+                </div>
+                <div class="login_card-row">
+                    <p style="font-size: 18px;" class="col-form-label">Текст отзыва_Анг</p>
+                    <textarea class="input-text input-textarea" required name="text_en" placeholder="Текст отзыва">{{ $review->text_en }}</textarea>
                 </div>
     
                 <div class="login_card-row">
@@ -50,7 +58,7 @@
 
         @if(!empty($review->img))
         <div class="login_card-group-wrapper-image">
-            <img src="{{ asset('storage/' . $review->img) }}" alt="{{ $review->title }}">
+            <img src="{{ asset('storage/' . $review->img) }}" alt="{{ $review->name_ru }}">
         </div>
         @endif
     </div>

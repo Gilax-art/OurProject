@@ -16,8 +16,10 @@
                 <thead>
                     <tr class="text-nowrap">
                         <th>ID</th>
-                        <th>Имя</th>
-                        <th>Текст</th>
+                        <th>Имя_Рус</th>
+                        <th>Имя_Анг</th>
+                        <th>Текст_Рус</th>
+                        <th>Текст_Анг</th>
                         <th>Ссылка</th>
                         <th>Картинка</th>
                         <th>Дата</th>
@@ -30,8 +32,10 @@
                     @foreach ($reviews as $review)
                     <tr>
                         <th scope="row">{{ $review->id }}</th>
-                        <td>{{ $review->name }}</td>
-                        <td>{{ $review->text }}</td>
+                        <td>{{ $review->name_ru }}</td>
+                        <td>{{ $review->name_en }}</td>
+                        <td>{{ $review->text_ru }}</td>
+                        <td>{{ $review->text_en }}</td>
                         <td>{{ $review->link }}</td>
                         <td>{{ $review->img }}</td>
                         <td>{{ $review->created_at }}</td>

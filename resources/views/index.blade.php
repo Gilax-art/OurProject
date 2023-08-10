@@ -32,8 +32,8 @@
                         <img src="{{ asset('assets/img/grid.png')}}" alt="grid">
                     </div>
                     <div class="main_head_content_info">
-                        <h1 class="main_head_content_info--title">Высокий уровень проектирования с опытом более 8 лет</h1>
-                        <button class="main_head_content_info--link order-form-btn">Связаться с нами</button>
+                        <h1 class="main_head_content_info--title">{{ __('messages.title') }}</h1>
+                        <button class="main_head_content_info--link order-form-btn">{{ __('messages.contactus') }}</button>
                     </div>
                 </div>
             </div>
@@ -45,25 +45,25 @@
                 <nav class="main_body_navigation main_body_wrapper-item">
                     <ul class="main_body_navigation_list">
                         <li class="main_body_navigation--item">
-                            <a href="#team" class="main_body_navigation--btn active">Команда</a>
+                            <a href="#team" class="main_body_navigation--btn active">{{ __('messages.team') }}</a>
                         </li>
                         <li class="main_body_navigation--item">
-                            <a href="#servises" class="main_body_navigation--btn">Услуги</a>
+                            <a href="#servises" class="main_body_navigation--btn">{{ __('messages.services') }}</a>
                         </li>
                         <li class="main_body_navigation--item">
-                            <a href="#cases" class="main_body_navigation--btn">Проекты</a>
+                            <a href="#cases" class="main_body_navigation--btn">{{ __('messages.projects') }}</a>
                         </li>
                     </ul>
                 </nav>
                 <div class="main_body_info main_body_wrapper-item">
                     <div class="main_body_info_top">
-                        <h2 class="main_body_info--title">Разрабатываем сайты, проектируем веб-сервисы, создаем цифровую среду для пользователя.</h2>
+                        <h2 class="main_body_info--title">{{ __('messages.about') }}</h2>
                         <ul class="main_body_info_team">
                             @foreach ($team as $mate)
                             <li class="main_body_info_team--case">
-                                <img class="main_body_info_team--case-image" src="{{ asset('storage/' . $mate->img) }}" alt="{{ $mate->title }}">
-                                <p class="main_body_info_team--case-name">{{ $mate->title }}</p>
-                                <p class="main_body_info_team--case-status">{{ $mate->status }}</p>
+                                <img class="main_body_info_team--case-image" src="{{ asset('storage/' . $mate->img) }}" alt="{{ $mate->title_ . $locale }}">
+                                <p class="main_body_info_team--case-name">{{ $mate->__('title') }}</p>
+                                <p class="main_body_info_team--case-status">{{ $mate->__('status') }}</p>
                             </li>
                             @endforeach
                         </ul>
@@ -72,221 +72,311 @@
                     <ul class="main_body_info_sliders" id="servises">
                         <li class="main_body_info_sliders-item">
                             <button class="main_body_info_sliders-item--btn">
-                                <p class="main_body_info_sliders-item--btn-text">Сайты</p>
+                                <p class="main_body_info_sliders-item--btn-text">{{ __('messages.sites') }}</p>
                                 <div class="main_body_info_sliders-item--btn-right">
-                                    <p class="main_body_info_sliders-item--btn-text-hiden"><span>52 дня</span> 725 000 &#8381;</p>
+                                    <p class="main_body_info_sliders-item--btn-text-hiden"><span>7 {{ __('messages.days') }}</span> {{ __('messages.price25') }}</p>
                                     <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.7033 0V18.5M18.7033 37V18.5M18.7033 18.5H37H0" stroke="white" stroke-width="2"/></svg>                                        
                                 </div>
                             </button>
                             <div class="main_body_info_sliders-item-wrapper">
                                 <div class="main_body_info_sliders-item-wrapper-content">
                                     <p class="main_body_info_sliders-item-wrapper-text">
-                                        После получения оплаты мы начинаем работу над конкретным этапом. По завершении мы договариваемся о видеозвонке и представляем результат работы. После звонка мы фиксируем результат письмом на почту, просим согласовать этап или внести изменения.
+                                        {{ __('messages.sitesdesc') }}
                                     </p>
                                     <ul class="main_body_info_sliders-item_list">
                                         <li class="main_body_info_sliders-item_list--item">
                                             <button class="main_body_info_sliders-item_list--item--btn">
-                                                <p class="main_body_info_sliders-item_list--item--btn-text">Брифинг</p>
+                                                <p class="main_body_info_sliders-item_list--item--btn-text">{{ __('messages.lending') }}</p>
                                                 <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>2 дня</span> 0 &#8381;</p>
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>7 {{ __('messages.days') }}</span> {{ __('messages.price20') }}</p>
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
                                                 </div>
                                             </button>
                                             <div class="main_body_info_sliders-item_list--item-wrapper">
                                                 <div class="main_body_info_sliders-item_list--item-content">
                                                     <p class="main_body_info_sliders-item_list--item-content-text">
-                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur impedit architecto quo voluptatibus excepturi nisi vero nihil id voluptas. Vitae nobis commodi, quia in eligendi quidem animi voluptatum ipsa esse.
+                                                        {{ __('messages.lendingdesc') }}
                                                     </p>
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="main_body_info_sliders-item_list--item">
                                             <button class="main_body_info_sliders-item_list--item--btn">
-                                                <p class="main_body_info_sliders-item_list--item--btn-text">UX/Аналитика</p>
+                                                <p class="main_body_info_sliders-item_list--item--btn-text">{{ __('messages.corpst') }}</p>
                                                 <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>5 дней</span> 110 000 &#8381;</p>
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>14 {{ __('messages.days') }}</span> {{ __('messages.price45') }}</p>
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
                                                 </div>
                                             </button>
                                             <div class="main_body_info_sliders-item_list--item-wrapper">
                                                 <div class="main_body_info_sliders-item_list--item-content">
                                                     <p class="main_body_info_sliders-item_list--item-content-text">
-                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur impedit architecto quo voluptatibus excepturi nisi vero nihil id voluptas. Vitae nobis commodi, quia in eligendi quidem animi voluptatum ipsa esse.
+                                                        {{ __('messages.corpstdesc') }}
                                                     </p>
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="main_body_info_sliders-item_list--item">
                                             <button class="main_body_info_sliders-item_list--item--btn">
-                                                <p class="main_body_info_sliders-item_list--item--btn-text">Дизайн концепт</p>
+                                                <p class="main_body_info_sliders-item_list--item--btn-text">{{ __('messages.store') }}</p>
                                                 <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>5 дней</span> 110 000 &#8381;</p>
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>{{ __('messages.month') }}</span> {{ __('messages.price100') }}</p>
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
                                                 </div>
                                             </button>
                                             <div class="main_body_info_sliders-item_list--item-wrapper">
                                                 <div class="main_body_info_sliders-item_list--item-content">
                                                     <p class="main_body_info_sliders-item_list--item-content-text">
-                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur impedit architecto quo voluptatibus excepturi nisi vero nihil id voluptas. Vitae nobis commodi, quia in eligendi quidem animi voluptatum ipsa esse.
+                                                        {{ __('messages.storedesc') }}
                                                     </p>
                                                 </div>
                                             </div>
                                         </li>
                                         <li class="main_body_info_sliders-item_list--item">
                                             <button class="main_body_info_sliders-item_list--item--btn">
-                                                <p class="main_body_info_sliders-item_list--item--btn-text">Дизайн всех страниц</p>
+                                                <p class="main_body_info_sliders-item_list--item--btn-text">{{ __('messages.special') }}</p>
                                                 <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>5 дней</span> 110 000 &#8381;</p>
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"></p>
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
                                                 </div>
                                             </button>
                                             <div class="main_body_info_sliders-item_list--item-wrapper">
                                                 <div class="main_body_info_sliders-item_list--item-content">
                                                     <p class="main_body_info_sliders-item_list--item-content-text">
-                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur impedit architecto quo voluptatibus excepturi nisi vero nihil id voluptas. Vitae nobis commodi, quia in eligendi quidem animi voluptatum ipsa esse.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="main_body_info_sliders-item_list--item">
-                                            <button class="main_body_info_sliders-item_list--item--btn">
-                                                <p class="main_body_info_sliders-item_list--item--btn-text">Адаптивы</p>
-                                                <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>5 дней</span> 110 000 &#8381;</p>
-                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
-                                                </div>
-                                            </button>
-                                            <div class="main_body_info_sliders-item_list--item-wrapper">
-                                                <div class="main_body_info_sliders-item_list--item-content">
-                                                    <p class="main_body_info_sliders-item_list--item-content-text">
-                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur impedit architecto quo voluptatibus excepturi nisi vero nihil id voluptas. Vitae nobis commodi, quia in eligendi quidem animi voluptatum ipsa esse.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="main_body_info_sliders-item_list--item">
-                                            <button class="main_body_info_sliders-item_list--item--btn">
-                                                <p class="main_body_info_sliders-item_list--item--btn-text">Верстка</p>
-                                                <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>5 дней</span> 110 000 &#8381;</p>
-                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
-                                                </div>
-                                            </button>
-                                            <div class="main_body_info_sliders-item_list--item-wrapper">
-                                                <div class="main_body_info_sliders-item_list--item-content">
-                                                    <p class="main_body_info_sliders-item_list--item-content-text">
-                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur impedit architecto quo voluptatibus excepturi nisi vero nihil id voluptas. Vitae nobis commodi, quia in eligendi quidem animi voluptatum ipsa esse.
+                                                        {{ __('messages.specialdesc') }}
                                                     </p>
                                                 </div>
                                             </div>
                                         </li>
                                     </ul>
-                                    <p class="main_body_info_sliders-item--btn-text-hiden main_body_info_sliders-item--price-text"><span>52 дня</span> 725 000 &#8381;</p>
                                 </div>
                             </div>
                         </li>
                         <li class="main_body_info_sliders-item">
                             <button class="main_body_info_sliders-item--btn">
-                                <p class="main_body_info_sliders-item--btn-text">Магазины</p>
+                                <p class="main_body_info_sliders-item--btn-text">{{ __('messages.dev') }}</p>
                                 <div class="main_body_info_sliders-item--btn-right">
-                                    <p class="main_body_info_sliders-item--btn-text-hiden"><span>52 дня</span> 725 000 &#8381;</p>
+                                    <p class="main_body_info_sliders-item--btn-text-hiden"><span>1 {{ __('messages.dys') }}</span> {{ __('messages.price5') }}</p>
                                     <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.7033 0V18.5M18.7033 37V18.5M18.7033 18.5H37H0" stroke="white" stroke-width="2"/></svg>                                        
                                 </div>
                             </button>
                             <div class="main_body_info_sliders-item-wrapper">
                                 <div class="main_body_info_sliders-item-wrapper-content">
                                     <p class="main_body_info_sliders-item-wrapper-text">
-                                        После получения оплаты мы начинаем работу над конкретным этапом. По завершении мы договариваемся о видеозвонке и представляем результат работы. После звонка мы фиксируем результат письмом на почту, просим согласовать этап или внести изменения.
+                                        {{ __('messages.devdesc') }}
                                     </p>
                                     <ul class="main_body_info_sliders-item_list">
                                         <li class="main_body_info_sliders-item_list--item">
                                             <button class="main_body_info_sliders-item_list--item--btn">
-                                                <p class="main_body_info_sliders-item_list--item--btn-text">Брифинг</p>
+                                                <p class="main_body_info_sliders-item_list--item--btn-text">{{ __('messages.verst') }}</p>
                                                 <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>2 дня</span> 0 &#8381;</p>
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>1 {{ __('messages.dys') }}</span> {{ __('messages.price3') }}</p>
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
                                                 </div>
                                             </button>
                                             <div class="main_body_info_sliders-item_list--item-wrapper">
                                                 <div class="main_body_info_sliders-item_list--item-content">
                                                     <p class="main_body_info_sliders-item_list--item-content-text">
-                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur impedit architecto quo voluptatibus excepturi nisi vero nihil id voluptas. Vitae nobis commodi, quia in eligendi quidem animi voluptatum ipsa esse.
+                                                        {{ __('messages.verstd') }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="main_body_info_sliders-item_list--item">
+                                            <button class="main_body_info_sliders-item_list--item--btn">
+                                                <p class="main_body_info_sliders-item_list--item--btn-text">{{ __('messages.adapt') }}</p>
+                                                <div class="main_body_info_sliders-item_list--item--btn-right">
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>1 {{ __('messages.dys') }}</span> {{ __('messages.price3') }}</p>
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
+                                                </div>
+                                            </button>
+                                            <div class="main_body_info_sliders-item_list--item-wrapper">
+                                                <div class="main_body_info_sliders-item_list--item-content">
+                                                    <p class="main_body_info_sliders-item_list--item-content-text">
+                                                        {{ __('messages.adaptd') }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="main_body_info_sliders-item_list--item">
+                                            <button class="main_body_info_sliders-item_list--item--btn">
+                                                <p class="main_body_info_sliders-item_list--item--btn-text">{{ __('messages.redis') }}</p>
+                                                <div class="main_body_info_sliders-item_list--item--btn-right">
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>7 {{ __('messages.days') }}</span> {{ __('messages.price20') }}</p>
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
+                                                </div>
+                                            </button>
+                                            <div class="main_body_info_sliders-item_list--item-wrapper">
+                                                <div class="main_body_info_sliders-item_list--item-content">
+                                                    <p class="main_body_info_sliders-item_list--item-content-text">
+                                                        {{ __('messages.redisd') }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="main_body_info_sliders-item_list--item">
+                                            <button class="main_body_info_sliders-item_list--item--btn">
+                                                <p class="main_body_info_sliders-item_list--item--btn-text">{{ __('messages.front') }}</p>
+                                                <div class="main_body_info_sliders-item_list--item--btn-right">
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>7 {{ __('messages.days') }}</span> {{ __('messages.price20') }}</p>
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
+                                                </div>
+                                            </button>
+                                            <div class="main_body_info_sliders-item_list--item-wrapper">
+                                                <div class="main_body_info_sliders-item_list--item-content">
+                                                    <p class="main_body_info_sliders-item_list--item-content-text">
+                                                        {{ __('messages.frontd') }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="main_body_info_sliders-item_list--item">
+                                            <button class="main_body_info_sliders-item_list--item--btn">
+                                                <p class="main_body_info_sliders-item_list--item--btn-text">{{ __('messages.backn') }}</p>
+                                                <div class="main_body_info_sliders-item_list--item--btn-right">
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>7 {{ __('messages.days') }}</span> {{ __('messages.price40') }}</p>
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
+                                                </div>
+                                            </button>
+                                            <div class="main_body_info_sliders-item_list--item-wrapper">
+                                                <div class="main_body_info_sliders-item_list--item-content">
+                                                    <p class="main_body_info_sliders-item_list--item-content-text">
+                                                        {{ __('messages.backd') }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="main_body_info_sliders-item_list--item">
+                                            <button class="main_body_info_sliders-item_list--item--btn">
+                                                <p class="main_body_info_sliders-item_list--item--btn-text">{{ __('messages.micro') }}</p>
+                                                <div class="main_body_info_sliders-item_list--item--btn-right">
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>14 {{ __('messages.days') }}</span> {{ __('messages.price50') }}</p>
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
+                                                </div>
+                                            </button>
+                                            <div class="main_body_info_sliders-item_list--item-wrapper">
+                                                <div class="main_body_info_sliders-item_list--item-content">
+                                                    <p class="main_body_info_sliders-item_list--item-content-text">
+                                                        {{ __('messages.microd') }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="main_body_info_sliders-item_list--item">
+                                            <button class="main_body_info_sliders-item_list--item--btn">
+                                                <p class="main_body_info_sliders-item_list--item--btn-text">{{ __('messages.bots') }}</p>
+                                                <div class="main_body_info_sliders-item_list--item--btn-right">
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>2 {{ __('messages.das') }}</span> {{ __('messages.price10') }}</p>
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
+                                                </div>
+                                            </button>
+                                            <div class="main_body_info_sliders-item_list--item-wrapper">
+                                                <div class="main_body_info_sliders-item_list--item-content">
+                                                    <p class="main_body_info_sliders-item_list--item-content-text">
+                                                        {{ __('messages.botsd') }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="main_body_info_sliders-item_list--item">
+                                            <button class="main_body_info_sliders-item_list--item--btn">
+                                                <p class="main_body_info_sliders-item_list--item--btn-text">{{ __('messages.seo') }}</p>
+                                                <div class="main_body_info_sliders-item_list--item--btn-right">
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>{{ __('messages.month') }}</span> {{ __('messages.price20') }}</p>
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
+                                                </div>
+                                            </button>
+                                            <div class="main_body_info_sliders-item_list--item-wrapper">
+                                                <div class="main_body_info_sliders-item_list--item-content">
+                                                    <p class="main_body_info_sliders-item_list--item-content-text">
+                                                        {{ __('messages.seod') }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="main_body_info_sliders-item_list--item">
+                                            <button class="main_body_info_sliders-item_list--item--btn">
+                                                <p class="main_body_info_sliders-item_list--item--btn-text">{{ __('messages.other') }}</p>
+                                                <div class="main_body_info_sliders-item_list--item--btn-right">
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"></p>
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
+                                                </div>
+                                            </button>
+                                            <div class="main_body_info_sliders-item_list--item-wrapper">
+                                                <div class="main_body_info_sliders-item_list--item-content">
+                                                    <p class="main_body_info_sliders-item_list--item-content-text">
+                                                        {{ __('messages.otherd') }}
                                                     </p>
                                                 </div>
                                             </div>
                                         </li>
                                     </ul>
-                                    <p class="main_body_info_sliders-item--btn-text-hiden main_body_info_sliders-item--price-text"><span>52 дня</span> 725 000 &#8381;</p>
                                 </div>
                             </div>
                         </li>
                         <li class="main_body_info_sliders-item">
                             <button class="main_body_info_sliders-item--btn">
-                                <p class="main_body_info_sliders-item--btn-text">Разработка</p>
+                                <p class="main_body_info_sliders-item--btn-text">{{ __('messages.des') }}</p>
                                 <div class="main_body_info_sliders-item--btn-right">
-                                    <p class="main_body_info_sliders-item--btn-text-hiden"><span>52 дня</span> 725 000 &#8381;</p>
+                                    <p class="main_body_info_sliders-item--btn-text-hiden"><span>10 {{ __('messages.days') }}</span> {{ __('messages.price20') }}</p>
                                     <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.7033 0V18.5M18.7033 37V18.5M18.7033 18.5H37H0" stroke="white" stroke-width="2"/></svg>                                        
                                 </div>
                             </button>
                             <div class="main_body_info_sliders-item-wrapper">
                                 <div class="main_body_info_sliders-item-wrapper-content">
                                     <p class="main_body_info_sliders-item-wrapper-text">
-                                        После получения оплаты мы начинаем работу над конкретным этапом. По завершении мы договариваемся о видеозвонке и представляем результат работы. После звонка мы фиксируем результат письмом на почту, просим согласовать этап или внести изменения.
+                                        {{ __('messages.desd') }}
                                     </p>
                                     <ul class="main_body_info_sliders-item_list">
                                         <li class="main_body_info_sliders-item_list--item">
                                             <button class="main_body_info_sliders-item_list--item--btn">
-                                                <p class="main_body_info_sliders-item_list--item--btn-text">Брифинг</p>
+                                                <p class="main_body_info_sliders-item_list--item--btn-text">{{ __('messages.lend') }}</p>
                                                 <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>2 дня</span> 0 &#8381;</p>
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>3 {{ __('messages.das') }}</span> {{ __('messages.price15') }}</p>
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
                                                 </div>
                                             </button>
                                             <div class="main_body_info_sliders-item_list--item-wrapper">
                                                 <div class="main_body_info_sliders-item_list--item-content">
                                                     <p class="main_body_info_sliders-item_list--item-content-text">
-                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur impedit architecto quo voluptatibus excepturi nisi vero nihil id voluptas. Vitae nobis commodi, quia in eligendi quidem animi voluptatum ipsa esse.
+                                                        {{ __('messages.lendd') }}
                                                     </p>
                                                 </div>
                                             </div>
                                         </li>
-                                    </ul>
-                                    <p class="main_body_info_sliders-item--btn-text-hiden main_body_info_sliders-item--price-text"><span>52 дня</span> 725 000 &#8381;</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="main_body_info_sliders-item">
-                            <button class="main_body_info_sliders-item--btn">
-                                <p class="main_body_info_sliders-item--btn-text">Дизайн</p>
-                                <div class="main_body_info_sliders-item--btn-right">
-                                    <p class="main_body_info_sliders-item--btn-text-hiden"><span>52 дня</span> 725 000 &#8381;</p>
-                                    <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.7033 0V18.5M18.7033 37V18.5M18.7033 18.5H37H0" stroke="white" stroke-width="2"/></svg>                                        
-                                </div>
-                            </button>
-                            <div class="main_body_info_sliders-item-wrapper">
-                                <div class="main_body_info_sliders-item-wrapper-content">
-                                    <p class="main_body_info_sliders-item-wrapper-text">
-                                        После получения оплаты мы начинаем работу над конкретным этапом. По завершении мы договариваемся о видеозвонке и представляем результат работы. После звонка мы фиксируем результат письмом на почту, просим согласовать этап или внести изменения.
-                                    </p>
-                                    <ul class="main_body_info_sliders-item_list">
                                         <li class="main_body_info_sliders-item_list--item">
                                             <button class="main_body_info_sliders-item_list--item--btn">
-                                                <p class="main_body_info_sliders-item_list--item--btn-text">Брифинг</p>
+                                                <p class="main_body_info_sliders-item_list--item--btn-text">{{ __('messages.corp') }}</p>
                                                 <div class="main_body_info_sliders-item_list--item--btn-right">
-                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>2 дня</span> 0 &#8381;</p>
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>7 {{ __('messages.days') }}</span> {{ __('messages.price25') }}</p>
                                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
                                                 </div>
                                             </button>
                                             <div class="main_body_info_sliders-item_list--item-wrapper">
                                                 <div class="main_body_info_sliders-item_list--item-content">
                                                     <p class="main_body_info_sliders-item_list--item-content-text">
-                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur impedit architecto quo voluptatibus excepturi nisi vero nihil id voluptas. Vitae nobis commodi, quia in eligendi quidem animi voluptatum ipsa esse.
+                                                        {{ __('messages.corpd') }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="main_body_info_sliders-item_list--item">
+                                            <button class="main_body_info_sliders-item_list--item--btn">
+                                                <p class="main_body_info_sliders-item_list--item--btn-text">{{ __('messages.store') }}</p>
+                                                <div class="main_body_info_sliders-item_list--item--btn-right">
+                                                    <p class="main_body_info_sliders-item_list--item--btn-right-text"><span>14 {{ __('messages.days') }}</span> {{ __('messages.price40') }}</p>
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.06593 0V6M6.06593 12V6M6.06593 6H12H0" stroke="white"/></svg>                                                        
+                                                </div>
+                                            </button>
+                                            <div class="main_body_info_sliders-item_list--item-wrapper">
+                                                <div class="main_body_info_sliders-item_list--item-content">
+                                                    <p class="main_body_info_sliders-item_list--item-content-text">
+                                                        {{ __('messages.stored') }}
                                                     </p>
                                                 </div>
                                             </div>
                                         </li>
                                     </ul>
-                                    <p class="main_body_info_sliders-item--btn-text-hiden main_body_info_sliders-item--price-text"><span>52 дня</span> 725 000 &#8381;</p>
                                 </div>
                             </div>
                         </li>
@@ -305,7 +395,7 @@
                     </li>  
                 @endforeach
             </ul>
-            <a href="{{ route('cases') }}" class="main_cases_list-after-link">Больше наших проектов <div class="main_contacts-wrapper-arrow"></div></a>
+            <a href="{{ route('cases') }}" class="main_cases_list-after-link">{{ __('messages.more') }} <div class="main_contacts-wrapper-arrow"></div></a>
         </div>
     </section>
     <div class="main_contacts-wrap">
@@ -313,7 +403,7 @@
         <section class="main_contacts" id="contacts">
             <div class="container">
                 <div class="main_contacts-wrapper">
-                    <p class="main_contacts-text">контакты</p>
+                    <p class="main_contacts-text">{{ __('messages.contacts') }}</p>
                     <div class="main_contacts-wrapper-arrow"></div>
                 </div>
             </div>

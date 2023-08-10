@@ -22,16 +22,20 @@ class TeamStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required',
-            'status' => 'required',
+            'title_ru' => 'required',
+            'title_en' => 'required',
+            'status_ru' => 'required',
+            'status_en' => 'required',
             'img' => ['file','required']
         ];
     }
     public function messages(): array
     {
         return [
-            'title.required' => 'The title field is required',
-            'status.required' => 'The status field is required',
+            'title_ru.required' => 'The title_ru field is required',
+            'title_en.required' => 'The title_en field is required',
+            'status_ru.required' => 'The status_ru field is required',
+            'status_en.required' => 'The status_en field is required',
             'img.required' => 'The img field is required',
         ];
     }

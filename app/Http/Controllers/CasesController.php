@@ -32,25 +32,38 @@ class CasesController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'title' => 'required',
+            'title_ru' => 'required',
+            'title_en' => 'required',
             'link' => 'required',
             'url' => 'required',
             'img' => 'file | required',
         ]);
 
-        if(!empty($request['description'])){
-            $data['description'] = $request['description'];
+        if(!empty($request['description_ru'])){
+            $data['description_ru'] = $request['description_ru'];
+        }
+        if(!empty($request['description_en'])){
+            $data['description_en'] = $request['description_en'];
         }
         $data['img'] = Storage::disk('public')->put('images/cases', $data['img']);
 
-        if(!empty($request['deadlines'])){
-            $data['deadlines'] = $request['deadlines'];
+        if(!empty($request['deadlines_ru'])){
+            $data['deadlines_ru'] = $request['deadlines_ru'];
         }
-        if(!empty($request['technologies'])){
-            $data['technologies'] = $request['technologies'];
+        if(!empty($request['deadlines_en'])){
+            $data['deadlines_en'] = $request['deadlines_en'];
         }
-        if(!empty($request['review'])){
-            $data['review'] = $request['review'];
+        if(!empty($request['technologies_ru'])){
+            $data['technologies_ru'] = $request['technologies_ru'];
+        }
+        if(!empty($request['technologies_en'])){
+            $data['technologies_en'] = $request['technologies_en'];
+        }
+        if(!empty($request['review_ru'])){
+            $data['review_ru'] = $request['review_ru'];
+        }
+        if(!empty($request['review_en'])){
+            $data['review_en'] = $request['review_en'];
         }
         if(!empty($request['screenshots'])){
             foreach($request['screenshots'] as $screenshot):
@@ -87,7 +100,7 @@ class CasesController extends Controller
     {
         $data = $request->validated();
 
-        foreach ($request->all(['deadlines', 'technologies', 'review', 'description']) as $key => $value){
+        foreach ($request->all(['deadlines_ru', 'deadlines_en', 'technologies_ru', 'technologies_en', 'review_ru', 'review_en', 'description_ru', 'description_en' ]) as $key => $value){
             if(!empty($value)){
                 $data[$key] = $value;
             }
